@@ -45,7 +45,7 @@ const Home = ({ logged }) => {
       <div className="flex flex-col justify-center items-center h-80 mb-7">
         <section className=" text-primary flex flex-col justify-center items-center mt-40  font-Default ">
           <p className="text-lg sm:text-2xl md:text-4xl tracking-[0.5rem] md:tracking-[0.8rem] font-Default">
-            17-20th march
+            26-28th October
           </p>
 
           <Fade
@@ -55,11 +55,14 @@ const Home = ({ logged }) => {
             cascade
             damping={0.2}
           >
-            TECHNIKA
+            TECHNIKA 2K24
           </Fade>
 
           <p className="text-2xl sm:text-2xl md:text-4xl text-center tracking-[0.7rem] md:tracking-[1rem] font-bold text-[#9360FA] font-Default">
-            beyond the horizon
+            Innovating today
+            </p>
+            <p className="text-2xl sm:text-2xl md:text-4xl text-center tracking-[0.7rem] md:tracking-[1rem] font-bold text-[#9360FA] font-Default">
+              Sustaining tomorrow
           </p>
         </section>
         <div>

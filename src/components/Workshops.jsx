@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import WorkshopCard from "./WorkshopCard";
 import CardContainer from "./CardContainer"; // Import CardContainer
 import Eco from "../assets/eco.png";
@@ -18,7 +18,7 @@ const workshopsData = [
     title: "Basic Trading Workshop",
     image: "/images/ml-workshop.jpg",
     description:
-      "Learn the fundamentals of stock market trading and investment strategies in this beginner-friendly workshop. Gain insights into financial markets, trading platforms, and techniques to analyse stocks, making you ready to start your trading journey with confidence.",
+      "Learn the fundamentals of stock market trading and investment strategies in this beginner-friendly workshop. Gain insights into financial markets, trading platforms, and techniques to analyze stocks, making you ready to start your trading journey with confidence.",
     formLink: "https://forms.gle/1PiBsS4NDLagxspi6",
   },
   {
@@ -70,14 +70,17 @@ const Workshops = () => {
   const [selectedWorkshop, setSelectedWorkshop] = useState(null);
   const registerButtonRef = useRef(null);
 
-  const handleWorkshopClick = (workshop) => {
-    setSelectedWorkshop(workshop);
-    if (registerButtonRef.current) {
+  useEffect(() => {
+    if (selectedWorkshop && registerButtonRef.current) {
       registerButtonRef.current.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
       });
     }
+  }, [selectedWorkshop]);
+
+  const handleWorkshopClick = (workshop) => {
+    setSelectedWorkshop(workshop);
   };
 
   return (
@@ -94,7 +97,6 @@ const Workshops = () => {
         />
       </figure>
 
-      {/* Wrap workshop cards with CardContainer */}
       <CardContainer>
         {workshopsData.map((workshop) => (
           <WorkshopCard

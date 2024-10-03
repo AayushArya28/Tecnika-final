@@ -49,6 +49,9 @@
 .grid {
   grid-gap: 12px; /* Reduced gap between cards */
 }
+.flex {
+  display: flex;
+}
 /* Default styling for cards */
 .cards-container {
   display: flex;

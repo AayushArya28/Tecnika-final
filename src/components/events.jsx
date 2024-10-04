@@ -25,7 +25,6 @@ const EventDetails = ({ name, desc, pricing, formLink }) => {
 
 const Events = () => {
   const [eventsData, setEventsData] = useState([]);
-  const [selectedEvent, setSelectedEvent] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const registerButtonRef = useRef(null);
 
@@ -46,16 +45,6 @@ const Events = () => {
 
     fetchEvents();
   }, []);
-
-  const handleEventClick = (event) => {
-    setSelectedEvent(event);
-    if (registerButtonRef.current) {
-      registerButtonRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-      });
-    }
-  };
 
   const filteredEvents = eventsData.filter(event =>
     event.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -105,7 +94,6 @@ const Events = () => {
                   desc={event.desc}
                   pricing={event.pricing}
                   formLink={event.formLink}
-                  onClick={() => handleEventClick(event)}
                 />
               ))}
             </div>
@@ -124,22 +112,12 @@ const Events = () => {
               desc={event.desc}
               pricing={event.pricing}
               formLink={event.formLink}
-              onClick={() => handleEventClick(event)}
             />
           ))}
         </div>
       )}
 
-      {selectedEvent && (
-        <div ref={registerButtonRef} className="relative z-20 mt-8">
-          <EventDetails
-            name={selectedEvent.name}
-            desc={selectedEvent.desc}
-            pricing={selectedEvent.pricing}
-            formLink={selectedEvent.formLink}
-          />
-        </div>
-      )}
+      {/* Remove the selectedEvent rendering and onClick functionality */}
     </div>
   );
 };

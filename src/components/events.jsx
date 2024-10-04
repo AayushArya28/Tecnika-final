@@ -1,45 +1,11 @@
-import React, { useState, useRef } from "react";
+import { db } from "../firebase";
+import { useState, useEffect, useRef } from "react"; 
 import EventCard from "./eventCard";
 import Eco from "../assets/eco.png";
 import "../general.css";
+import { collection, getDocs } from "firebase/firestore";
 
-const eventsData = [
-  {
-    id: 1,
-    name: "Dev Conquest",
-    img: "/images/event1.jpg",
-    desc: "Unleash your creativity and coding skills in an intense hackathon. Compete with the brightest minds to develop innovative solutions to real-world problems and claim the title of Tech Wizard!",
-    pricing: "$10",
-    evid: "event1",
-  },
-  {
-    id: 2,
-    name: "Algo Apex",
-    img: "/images/event2.jpg",
-    desc: "Sharpen your algorithms and take on complex coding challenges in this competitive programming event. Show your problem-solving prowess and climb the leaderboard to emerge as the algorithm master.",
-    pricing: "$10",
-    evid: "event2",
-  },
-  {
-    id: 3,
-    name: "Ampere Assemble",
-    img: "/images/event3.jpg",
-    desc: "Dive into the world of circuits and electronics with Ampere Assemble. This electrifying competition will test your knowledge and practical skills in assembling and troubleshooting complex electronic systems.",
-    pricing: "$10",
-    evid: "event3",
-  },
-  {
-    id: 4,
-    name: "Robo Gladiators (Robo War)",
-    img: "/images/event4.jpg",
-    desc: "This is a description for Sample Event 4.",
-    pricing: "$10",
-    evid: "event4",
-  },
-
-];
-
-const EventDetails = ({ name, desc, pricing, evid }) => {
+const EventDetails = ({ name, desc, pricing, formLink }) => {
   return (
     <div className="bg-white bg-opacity-90 p-6 border-4 border-green-600 text-black rounded-lg max-w-xl mx-auto mt-8 shadow-lg">
       <h2 className="text-3xl font-bold mb-4 text-center">{name}</h2>
@@ -47,7 +13,7 @@ const EventDetails = ({ name, desc, pricing, evid }) => {
       <p className="text-lg mb-4 text-center font-semibold">{pricing}</p>
       <div className="flex justify-center">
         <a
-          href={`/form?id=${evid}`}
+          href={formLink}
           className="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-lg font-semibold rounded-full shadow-lg hover:shadow-xl hover:from-blue-600 hover:to-blue-800 transition-transform transform hover:scale-105 duration-300"
         >
           Register Now
@@ -58,9 +24,28 @@ const EventDetails = ({ name, desc, pricing, evid }) => {
 };
 
 const Events = () => {
+  const [eventsData, setEventsData] = useState([]);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const registerButtonRef = useRef(null);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const collections = ['technical', 'fun', 'workshop', 'esports'];
+      const allEvents = [];
+
+      for (const collectionName of collections) {
+        const eventsCollection = collection(db, collectionName);
+        const eventDocs = await getDocs(eventsCollection);
+        const eventsList = eventDocs.docs.map(doc => ({ id: doc.id, ...doc.data(), category: collectionName }));
+        allEvents.push(...eventsList);
+      }
+
+      setEventsData(allEvents);
+    };
+
+    fetchEvents();
+  }, []);
 
   const handleEventClick = (event) => {
     setSelectedEvent(event);
@@ -75,6 +60,12 @@ const Events = () => {
   const filteredEvents = eventsData.filter(event =>
     event.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const getEventsByCategory = (category) => {
+    return filteredEvents.filter(event => event.category === category);
+  };
+
+  const categories = ['technical', 'fun', 'workshop', 'esports'];
 
   return (
     <div className="relative container mx-auto overflow-hidden w-full px-4 py-8">
@@ -101,22 +92,42 @@ const Events = () => {
         />
       </div>
 
-      <div className="space-y-1 relative z-10">
-        {filteredEvents.map((event) => (
-          <EventCard
-            key={event.id}
-            img={event.img}
-            name={event.name}
-            desc={event.desc}
-            pricing={event.pricing}
-            evid={event.evid}
-            onClick={() => handleEventClick(event)}
-          />
-        ))}
-      </div>
-
-      {filteredEvents.length === 0 && (
-        <p className="text-white text-center mt-4">No events found.</p>
+      {searchTerm === "" ? (
+        categories.map(category => (
+          <div key={category} className="mb-8">
+            <h2 className="text-2xl font-bold text-white mb-4">{category.charAt(0).toUpperCase() + category.slice(1)}</h2>
+            <div className="space-y-1">
+              {getEventsByCategory(category).map((event) => (
+                <EventCard
+                  key={event.id}
+                  img={event.img}
+                  name={event.name}
+                  desc={event.desc}
+                  pricing={event.pricing}
+                  evid={event.formLink}
+                  onClick={() => handleEventClick(event)}
+                />
+              ))}
+            </div>
+            {getEventsByCategory(category).length === 0 && (
+              <p className="text-white text-center mt-2">No events found in this category.</p>
+            )}
+          </div>
+        ))
+      ) : (
+        <div className="space-y-1 relative z-10">
+          {filteredEvents.map((event) => (
+            <EventCard
+              key={event.id}
+              img={event.img}
+              name={event.name}
+              desc={event.desc}
+              pricing={event.pricing}
+              evid={event.formLink}
+              onClick={() => handleEventClick(event)}
+            />
+          ))}
+        </div>
       )}
 
       {selectedEvent && (
@@ -125,7 +136,7 @@ const Events = () => {
             name={selectedEvent.name}
             desc={selectedEvent.desc}
             pricing={selectedEvent.pricing}
-            evid={selectedEvent.evid}
+            evid={selectedEvent.formLink}
           />
         </div>
       )}

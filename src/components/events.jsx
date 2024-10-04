@@ -104,7 +104,7 @@ const Events = () => {
                   name={event.name}
                   desc={event.desc}
                   pricing={event.pricing}
-                  evid={event.formLink}
+                  formLink={event.formLink}
                   onClick={() => handleEventClick(event)}
                 />
               ))}
@@ -123,7 +123,7 @@ const Events = () => {
               name={event.name}
               desc={event.desc}
               pricing={event.pricing}
-              evid={event.formLink}
+              formLink={event.formLink}
               onClick={() => handleEventClick(event)}
             />
           ))}
@@ -136,7 +136,7 @@ const Events = () => {
             name={selectedEvent.name}
             desc={selectedEvent.desc}
             pricing={selectedEvent.pricing}
-            evid={selectedEvent.formLink}
+            formLink={selectedEvent.formLink}
           />
         </div>
       )}

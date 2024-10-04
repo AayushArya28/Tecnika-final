@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../general.css";
 
-const EventCard = ({ img, name, desc, pricing, evid, onClick }) => {
+const EventCard = ({ img, name, desc, pricing, formLink, onClick }) => {
   return (
     <div onClick={onClick} className="bg-gradient-to-r from-gray-800 via-gray-900 to-black p-6 border-2 border-gray-700 rounded-lg shadow-lg hover:shadow-2xl cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out w-full mb-8">
       <div className="flex flex-col md:flex-row">
@@ -30,7 +30,7 @@ const EventCard = ({ img, name, desc, pricing, evid, onClick }) => {
           </h3>
           <p className="text-md text-gray-300 mb-4">{desc}</p>
           <p className="text-lg font-semibold text-gray-300 mb-4">{pricing}</p>
-          <Link to={`/form?id=${evid}`}>
+          <Link target="_blank" rel="noopener noreferrer" to={formLink}>
             <button className="bg-[#9360fa] w-full md:w-auto px-6 py-2 text-white border-2 border-white rounded hover:bg-[#7c4fe0] transition-colors duration-300">
               Register
             </button>

@@ -29,7 +29,7 @@ const EventCard = ({ img, name, desc, pricing, formLink, onClick }) => {
             {name}
           </h3>
           <p className="text-md text-gray-300 mb-4">{desc}</p>
-          <p className="text-lg font-semibold text-gray-300 mb-4">{pricing}</p>
+          <p className="text-lg font-semibold text-gray-300 mb-4">{`₹ ${pricing}`}</p>
           <Link target="_blank" rel="noopener noreferrer" to={formLink}>
             <button className="bg-[#9360fa] w-full md:w-auto px-6 py-2 text-white border-2 border-white rounded hover:bg-[#7c4fe0] transition-colors duration-300">
               Register

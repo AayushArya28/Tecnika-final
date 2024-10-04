@@ -49,13 +49,13 @@ const Home = ({ logged }) => {
       </div>
 
       <div className="relative z-0 mt-12">
-        <Fade triggerOnce={true} direction="up" delay={1000}>
+        <Fade triggerOnce={true} direction="up" delay={200}>
           <ImageCarousel />
         </Fade>
       </div>
 
       <div className="relative z-10 mt-16">
-        <Fade triggerOnce={true} direction="up" delay={1200}>
+        <Fade triggerOnce={true} direction="up" delay={500}>
           <ContactInfo />
         </Fade>
       </div>

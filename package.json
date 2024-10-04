@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
+    "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@supabase/supabase-js": "^2.39.7",
     "axios": "^1.6.7",
     "base-x": "^4.0.0",
@@ -26,7 +28,9 @@
     "react-modal": "^3.16.1",
     "react-qr-code": "^2.0.12",
     "react-router-dom": "^6.26.2",
+    "react-slick": "^0.30.2",
     "react-toastify": "^10.0.4",
+    "slick-carousel": "^1.8.1",
     "uuid-base62": "^0.1.0",
     "validator": "^13.11.0"
   },

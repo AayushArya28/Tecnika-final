@@ -60,7 +60,7 @@ const ImageCarousel = () => {
         {/* Image slides */}
         <SplideSlide>
           <img
-            src="/src/assets/eco.png"
+            src="https://images.unsplash.com/photo-1601850494422-3cf14624b0b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Image 1"
             className={imageClassName}
             loading="lazy"
@@ -76,7 +76,7 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/src/assets/eco.png"
+            src="https://images.unsplash.com/photo-1578632749014-ca77efd052eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Image 3"
             className={imageClassName}
             loading="lazy"
@@ -84,7 +84,7 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/src/assets/eco.png"
+            src="https://images.unsplash.com/photo-1601850494422-3cf14624b0b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Image 4"
             className={imageClassName}
             loading="lazy"
@@ -92,7 +92,7 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/src/assets/eco.png"
+            src="https://images.unsplash.com/photo-1578632749014-ca77efd052eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Image 5"
             className={imageClassName}
             loading="lazy"
@@ -100,7 +100,7 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/src/assets/eco.png"
+            src="https://images.unsplash.com/photo-1601850494422-3cf14624b0b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Image 6"
             className={imageClassName}
             loading="lazy"
@@ -108,7 +108,7 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/src/assets/eco.png"
+            src="https://images.unsplash.com/photo-1601850494422-3cf14624b0b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Image 7"
             className={imageClassName}
             loading="lazy"

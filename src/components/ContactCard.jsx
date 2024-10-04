@@ -6,7 +6,8 @@ import PropTypes from "prop-types";
 const ContactCard = ({ image, name, email, phone, insta, linkedin }) => {
   return (
     <div className="relative">
-      <div className="w-[285px] h-[340px] md:w-[380px] bg-gradient-to-r from-green-300 via-blue-400 to-teal-600 p-6 border-4 border-green-600 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out mx-auto font-Default tracking-wider flex flex-col justify-between">
+      {/* <div className="w-[285px] h-[340px] md:w-[380px] bg-gradient-to-r from-green-300 via-blue-400 to-teal-600 p-6 border-4 border-green-600 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out mx-auto font-Default tracking-wider flex flex-col justify-between "> */}
+      <div className="w-[285px] h-[340px] md:w-[380px] bg-gradient-to-r bg-green-200/[0.7] p-6 border-4 border-green-600 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out mx-auto font-Default tracking-wider flex flex-col justify-between ">
         {/* Profile Section */}
         <div className="flex justify-center items-center gap-4 w-full">
           <figure className="overflow-hidden w-32 h-32 rounded-full border-4 border-teal-100">

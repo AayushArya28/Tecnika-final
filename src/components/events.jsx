@@ -85,9 +85,9 @@ const Events = () => {
         categories.map(category => (
           <div key={category} className="mb-8">
             <h2 className="text-2xl font-bold text-white mb-4">{category.charAt(0).toUpperCase() + category.slice(1)}</h2>
-            <div className="flex flex-wrap -mx-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
               {getEventsByCategory(category).map((event) => (
-                <div key={event.id} className="w-full sm:w-1/2 lg:w-1/2 px-2 mb-4">
+                <div key={event.id}>
                   <EventCard
                     img={event.img}
                     name={event.name}
@@ -104,9 +104,9 @@ const Events = () => {
           </div>
         ))
       ) : (
-        <div className="flex flex-wrap -mx-2 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 relative z-10">
           {filteredEvents.map((event) => (
-            <div key={event.id} className="w-full sm:w-1/2 lg:w-1/2 px-2 mb-4">
+            <div key={event.id}>
               <EventCard
                 img={event.img}
                 name={event.name}

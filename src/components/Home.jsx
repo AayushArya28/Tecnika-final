@@ -11,7 +11,7 @@ const Home = ({ logged }) => {
   const auth = getAuth();
 
   return (
-    <section className="relative overflow-hidden container mx-auto min-h-screen lg:min-h-[1200px] p-4 flex flex-col justify-start bg-black bg-[url('/bg2.png')] bg-no-repeat bg-contain">
+    <section className="relative overflow-hidden container mx-auto min-h-screen lg:min-h-[1200px] p-4 flex flex-col justify-start bg-black lg:bg-[url('/bg2.png')] bg-[url('/mobile-home.png')] bg-no-repeat bg-contain">
       <div className="flex flex-col justify-center items-center text-center relative z-10 mt-24 sm:mt-24">
         <section className="text-primary flex flex-col justify-center items-center font-anime">
           <Bounce triggerOnce={true} delay={200}>

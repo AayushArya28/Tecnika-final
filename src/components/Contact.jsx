@@ -39,7 +39,7 @@ const Contact = () => {
     },
     {
       key: "5",
-      image: "src/assets/PremKumarjpg.jpg",
+      image: "src/assets/PremKumar.jpg",
       name: "Prem Kumar Singh",
       position: "Press and Media Head",
       phone: "+91 7464025690",

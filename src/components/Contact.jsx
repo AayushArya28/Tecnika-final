@@ -19,7 +19,6 @@ const Contact = () => {
       name: "Balajee",
       position: "Cultural Head",
       phone: "+91 9693650110",
-      insta: "https://www.instagram.com/_mr_harsh007_?igsh=OXhnajAwdnF6bnZy",
     },
     {
       key: "3",

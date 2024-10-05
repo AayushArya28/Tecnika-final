@@ -105,6 +105,51 @@ const ImageCarousel = () => {
             loading="lazy"
           />
         </SplideSlide>
+        <SplideSlide>
+          <img
+            src="/slideshow/paintball.png"
+            alt="Paint Ball"
+            className={imageClassName}
+            style={{ padding: '0.4rem' }}
+            loading="lazy"
+          />
+        </SplideSlide>
+        <SplideSlide>
+          <img
+            src="/slideshow/pitching.png"
+            alt="Pitching"
+            className={imageClassName}
+            style={{ padding: '0.4rem' }}
+            loading="lazy"
+          />
+        </SplideSlide>
+        <SplideSlide>
+          <img
+            src="/slideshow/singing.png"
+            alt="Singing"
+            className={imageClassName}
+            style={{ padding: '0.4rem' }}
+            loading="lazy"
+          />
+        </SplideSlide>
+        <SplideSlide>
+          <img
+            src="/slideshow/tall-tower.png"
+            alt="Tall Tower"
+            className={imageClassName}
+            style={{ padding: '0.4rem' }}
+            loading="lazy"
+          />
+        </SplideSlide>
+        <SplideSlide>
+          <img
+            src="/slideshow/tech.png"
+            alt="Tech Event"
+            className={imageClassName}
+            style={{ padding: '0.4rem' }}
+            loading="lazy"
+          />
+        </SplideSlide>
         {/* Add more SplideSlides as needed */}
       </Splide>
     </section>

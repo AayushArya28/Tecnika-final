@@ -27,7 +27,7 @@ const Home = ({ logged }) => {
             cascade
             damping={0.2}
           >
-            <span className="animate-text bg-gradient-to-r from-[#ff416c] via-[#ff4b2b] to-[#fbb034] text-transparent bg-clip-text">
+            <span className="animate-text bg-gradient-to-r from-[#ff416c] via-[#ff4b2b] to-[#fbb034] text-transparent bg-clip-text font-anime">
               TECHNIKA 2024
             </span>
           </Fade>

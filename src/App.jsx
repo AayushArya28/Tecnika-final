@@ -40,7 +40,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className="bg-black h-full flex flex-col min-h-screen">
+      <div className="bg-black h-full flex flex-col min-h-screen font-anime">
         <NavBar logged={logged} />
         <div className="flex-grow">
           <Routes>

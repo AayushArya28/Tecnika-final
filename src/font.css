@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'go3v2';
-    src: url('/src/assets/go3v2.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  .font-anime {
-    font-family: 'go3v2', sans-serif;
-  }
+  font-family: 'go3v2';
+  src: url('/src/assets/go3v2.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-anime {
+  font-family: 'go3v2', sans-serif;
+}

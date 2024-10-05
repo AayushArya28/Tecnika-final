@@ -11,7 +11,7 @@ const Contact = () => {
       name: "Suryansh Sinha",
       position: "General Secretary",
       phone: "+91 8252624667",
-      insta: "https://www.instagram.com/_deo.shreyas_?igsh=MXVjcjlkY2ZjNzRpMQ==",
+      insta: "https://www.instagram.com/srivastava_0302_/",
     },
     {
       key: "2",
@@ -26,7 +26,7 @@ const Contact = () => {
       name: "Asman Kumari",
       position: "Event Head",
       phone: "+91 7857809775",
-      insta: "https://www.instagram.com/priyanshu24mach/",
+      insta: "https://www.instagram.com/asu_753/",
     },
     {
       key: "4",
@@ -34,7 +34,7 @@ const Contact = () => {
       name: "Piyush Kumar Jha",
       position: "Sponsorship Head",
       phone: "+91 7970570528",
-      insta: "https://www.instagram.com/abhisheekk._?igsh=NXZmNmNtcXRvNXQ0",
+      insta: "https://www.instagram.com/piyushkumar_jha26/",
     },
     {
       key: "5",
@@ -42,7 +42,7 @@ const Contact = () => {
       name: "Prem Kumar Singh",
       position: "Press and Media Head",
       phone: "+91 7464025690",
-      insta: "https://www.instagram.com/abhisheekk._?igsh=NXZmNmNtcXRvNXQ0",
+      insta: "https://www.instagram.com/prem11012004/",
     },
     {
       key: "6",
@@ -50,7 +50,7 @@ const Contact = () => {
       name: "Aadarsh Raj Alok",
       position: "Publicity Head",
       phone: "+91 7079901930",
-      insta: "https://www.instagram.com/abhisheekk._?igsh=NXZmNmNtcXRvNXQ0",
+      insta: "https://www.instagram.com/su.bh2807/",
     },
   ];
 

@@ -33,17 +33,21 @@ const ContactCard = ({ image, name, email, phone, insta, linkedin, position }) =
         </div>
 
         {/* Social Links */}
-        <div className="flex justify-around mt-5">
-          <a
-            href={insta}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform transform hover:scale-125"
-          >
-            <Icon icon={instagram} size={40} className="text-[#3AAFA9] hover:text-[#DEF2F1]" />
-          </a>
-          
-        </div>
+        {
+          !!insta && (
+            <div className="flex justify-around mt-5">
+              <a
+                href={insta}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-transform transform hover:scale-125"
+              >
+                <Icon icon={instagram} size={40} className="text-[#3AAFA9] hover:text-[#DEF2F1]" />
+              </a>
+
+            </div>
+          )
+        }
       </div>
     </div>
   );

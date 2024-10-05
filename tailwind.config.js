@@ -8,6 +8,7 @@ export default {
       },
       fontFamily: {
         Default: ["Urbanist", "sans-serif"],
+        'anime': ['go3v2'],
       },
     },
   },

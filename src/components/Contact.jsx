@@ -7,45 +7,49 @@ const Contact = () => {
   const contacts = [
     {
       key: "1",
-      image:"src/assets/Suryansh.jpg",
+      image: "src/assets/Suryansh.jpg",
       name: "Suryansh Sinha",
+      position: "General Secretary",
       phone: "+91 8252624667",
-      insta:"https://www.instagram.com/_deo.shreyas_?igsh=MXVjcjlkY2ZjNzRpMQ==",
+      insta: "https://www.instagram.com/_deo.shreyas_?igsh=MXVjcjlkY2ZjNzRpMQ==",
     },
     {
       key: "2",
-      image:"src/assets/365293.jpg",
+      image: "src/assets/BalaSir.jpg",
       name: "Balajee",
+      position: "Cultural Head",
       phone: "+91 9693650110",
       insta: "https://www.instagram.com/_mr_harsh007_?igsh=OXhnajAwdnF6bnZy",
     },
     {
       key: "3",
-      image:"src/assets/AsmanKumari.jpg",
+      image: "src/assets/AsmanKumari.jpg",
       name: "Asman Kumari",
+      position: "Event Head",
       phone: "+91 7857809775",
       insta: "https://www.instagram.com/priyanshu24mach/",
     },
     {
       key: "4",
-      image:"src/assets/PiyushJha.jpg",
+      image: "src/assets/PiyushJha.jpg",
       name: "Piyush Kumar Jha",
+      position: "Sponsorship Head",
       phone: "+91 7970570528",
       insta: "https://www.instagram.com/abhisheekk._?igsh=NXZmNmNtcXRvNXQ0",
     },
     {
       key: "5",
-      image:
-        "src/assets/PremKumarjpg.jpg",
+      image: "src/assets/PremKumarjpg.jpg",
       name: "Prem Kumar Singh",
+      position: "Press and Media Head",
       phone: "+91 7464025690",
       insta: "https://www.instagram.com/abhisheekk._?igsh=NXZmNmNtcXRvNXQ0",
     },
     {
       key: "6",
-      image:
-        "src/assets/AdarshRaj.jpg",
+      image: "src/assets/AdarshRaj.jpg",
       name: "Aadarsh Raj Alok",
+      position: "Publicity Head",
       phone: "+91 7079901930",
       insta: "https://www.instagram.com/abhisheekk._?igsh=NXZmNmNtcXRvNXQ0",
     },
@@ -83,6 +87,7 @@ const Contact = () => {
               phone={contact?.phone}
               linkedin={contact?.linkedin}
               insta={contact?.insta}
+              position={contact?.position}
             />
           </Fade>
         ))}

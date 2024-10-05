@@ -1,4 +1,3 @@
-import Astro2 from "../assets/astro2.png";
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";

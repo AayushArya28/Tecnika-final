@@ -54,7 +54,7 @@ const Home = ({ logged }) => {
       </div>
 
       <div className="relative z-10 mt-16">
-        <Fade triggerOnce={true} direction="up" delay={500}>
+        <Fade triggerOnce={true} direction="up" delay={200}>
           <ContactInfo />
         </Fade>
       </div>

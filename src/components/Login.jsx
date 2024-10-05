@@ -7,7 +7,6 @@ import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { useRef } from "react";
-// import LoginPC from '../assets/login-pc.jpg';
 
 import {
   getAuth,
@@ -18,11 +17,9 @@ import {
 } from "firebase/auth";
 import { app } from "../firebase";
 
-// import { createClient } from "@supabase/supabase-js";
-
 const Login = () => {
   const auth = getAuth();
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Using the navigate hook to redirect
   const form_ref = useRef();
   const [loading, setLoading] = useState(false);
 
@@ -161,10 +158,8 @@ const Login = () => {
                 </div>
 
                 <button
-                  className={`
-                  text-[#FEFFFF] bg-[#2B7A78] hover:bg-[#3AAFA9] transition-colors duration-300 rounded h-10 font-Default w-full text-center mt-4
-                  ${loading ? "opacity-50 cursor-not-allowed" : ""
-                    }`}
+                  className={`text-[#FEFFFF] bg-[#2B7A78] hover:bg-[#3AAFA9] transition-colors duration-300 rounded h-10 font-Default w-full text-center mt-4
+                  ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
                   type="submit"
                   disabled={loading}
                 >
@@ -179,6 +174,19 @@ const Login = () => {
               >
                 Forgot Password?
               </button>
+
+              {/* Register Now Button */}
+              <div className="text-center mt-6">
+                <p className="text-white">
+                  Don't have an account?{" "}
+                  <button
+                    onClick={() => navigate("/register")}
+                    className="text-[#3AAFA9] hover:text-[#FEFFFF] underline"
+                  >
+                    Register Now
+                  </button>
+                </p>
+              </div>
             </div>
           </div>
         </div>

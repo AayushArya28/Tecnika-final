@@ -13,6 +13,7 @@ import {
   signInWithEmailAndPassword,
   sendEmailVerification,
   onAuthStateChanged,
+  sendPasswordResetEmail, // Import added here
 } from "firebase/auth";
 import { app } from "../firebase";
 
@@ -27,9 +28,8 @@ const Login = () => {
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(eyeOff);
 
-  const formData = new FormData(form_ref.current);
-  const formObj = Object.fromEntries(formData.entries());
-  const { email, password } = formObj;
+  // Add state for email input
+  const [email, setEmail] = useState("");
 
   const handleToggle = () => {
     if (type === "password") {
@@ -41,13 +41,26 @@ const Login = () => {
     }
   };
 
+  // Handle Forgot Password
+  const handleForgotPassword = async () => {
+    if (!email) {
+      toast.error("Please enter your email address.");
+      return;
+    }
+    try {
+      await sendPasswordResetEmail(auth, email);
+      toast.success("Password reset email sent. Please check your inbox.");
+    } catch (error) {
+      toast.error(error.message);
+      console.log(error);
+    }
+  };
+
   const LoginUser = async (e) => {
     e.preventDefault();
     setLoading(true);
-    handleToggle();
-    // console.log(e);
-    const email = e.target[0].value;
-    const password = e.target[1].value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
 
     try {
       const loginUser = await signInWithEmailAndPassword(
@@ -100,7 +113,9 @@ const Login = () => {
                 onSubmit={LoginUser}
               >
                 <div>
-                  <label htmlFor="email" className="text-[#DEF2F1] mb-1 block">Email</label>
+                  <label htmlFor="email" className="text-[#DEF2F1] mb-1 block">
+                    Email
+                  </label>
                   <input
                     className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
                     type="email"
@@ -109,11 +124,18 @@ const Login = () => {
                     name="email"
                     autoComplete="email"
                     id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="password" className="text-[#DEF2F1] mb-1 block">Password</label>
+                  <label
+                    htmlFor="password"
+                    className="text-[#DEF2F1] mb-1 block"
+                  >
+                    Password
+                  </label>
                   <div className="relative">
                     <input
                       className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
@@ -125,10 +147,14 @@ const Login = () => {
                       id="password"
                     />
                     <span
-                      className="absolute top-3 right-3 cursor-pointer"
+                      className="absolute top-1 right-3 cursor-pointer"
                       onClick={handleToggle}
                     >
-                      <Icon icon={icon} size={20} className="text-[#3AAFA9]" />
+                      <Icon
+                        icon={icon}
+                        size={20}
+                        className="text-[#3AAFA9]"
+                      />
                     </span>
                   </div>
                 </div>
@@ -136,14 +162,23 @@ const Login = () => {
                 <button
                   className={`
                   text-[#FEFFFF] bg-[#2B7A78] hover:bg-[#3AAFA9] transition-colors duration-300 rounded h-10 font-Default w-full text-center mt-4
-                  ${loading ? 'opacity-50 cursor-not-allowed' : ''}
-                  `}
+                  ${
+                    loading ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
                   type="submit"
                   disabled={loading}
                 >
                   {loading ? "Loading..." : "Login"}
                 </button>
               </form>
+
+              {/* Forgot Password Button */}
+              <button
+                onClick={handleForgotPassword}
+                className="text-white hover:text-slate-300 mt-4 underline"
+              >
+                Forgot Password?
+              </button>
             </div>
           </div>
         </div>

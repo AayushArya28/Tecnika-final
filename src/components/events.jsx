@@ -1,5 +1,5 @@
 import { db } from "../firebase";
-import { useState, useEffect, useRef } from "react"; 
+import { useState, useEffect, useRef } from "react";
 import EventCard from "./eventCard";
 import Eco from "../assets/eco.png";
 import "../general.css";
@@ -30,7 +30,7 @@ const Events = () => {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const collections = ['technical','Cultural','fun', 'esports'];
+      const collections = ['technical', 'Cultural', 'fun', 'esports'];
       const allEvents = [];
 
       for (const collectionName of collections) {
@@ -54,7 +54,7 @@ const Events = () => {
     return filteredEvents.filter(event => event.category === category);
   };
 
-  const categories = ['technical','Cultural','fun', 'esports'];
+  const categories = ['technical', 'Cultural', 'fun', 'esports'];
 
   return (
     <div className="relative container mx-auto overflow-hidden w-full px-4 py-8">
@@ -94,6 +94,7 @@ const Events = () => {
                     desc={event.desc}
                     pricing={event.pricing}
                     formLink={event.formLink}
+                    eventType={event.eventType}
                   />
                 </div>
               ))}
@@ -113,6 +114,7 @@ const Events = () => {
                 desc={event.desc}
                 pricing={event.pricing}
                 formLink={event.formLink}
+                eventType={event.eventType}
               />
             </div>
           ))}

@@ -40,7 +40,7 @@ const NavBar = ({ logged }) => {
             Home
           </Link>
           <a
-            href="https://forms.gle/oVjowrQF1KJ7iRHB8"
+            href="https://forms.gle/dhrRnoE1nJHX8zNw5"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center text-base hover:text-[#af3a40] transition-all duration-300 font-semibold"

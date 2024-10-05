@@ -7,7 +7,7 @@ const Contact = () => {
   const contacts = [
     {
       key: "1",
-      image: "src/assets/Suryansh.jpg",
+      image: "/members/Suryansh.jpg",
       name: "Suryansh Sinha",
       position: "General Secretary",
       phone: "+91 8252624667",
@@ -15,14 +15,14 @@ const Contact = () => {
     },
     {
       key: "2",
-      image: "src/assets/BalaSir.jpg",
+      image: "/members/BalaSir.jpg",
       name: "Balajee",
       position: "Cultural Head",
       phone: "+91 9693650110",
     },
     {
       key: "3",
-      image: "src/assets/AsmanKumari.jpg",
+      image: "/members/AsmanKumari.jpg",
       name: "Asman Kumari",
       position: "Event Head",
       phone: "+91 7857809775",
@@ -30,7 +30,7 @@ const Contact = () => {
     },
     {
       key: "4",
-      image: "src/assets/PiyushJha.jpg",
+      image: "/members/PiyushJha.jpg",
       name: "Piyush Kumar Jha",
       position: "Sponsorship Head",
       phone: "+91 7970570528",
@@ -38,7 +38,7 @@ const Contact = () => {
     },
     {
       key: "5",
-      image: "src/assets/PremKumar.jpg",
+      image: "/members/PremKumar.jpg",
       name: "Prem Kumar Singh",
       position: "Press and Media Head",
       phone: "+91 7464025690",
@@ -46,7 +46,7 @@ const Contact = () => {
     },
     {
       key: "6",
-      image: "src/assets/AdarshRaj.jpg",
+      image: "/members/AdarshRaj.jpg",
       name: "Aadarsh Raj Alok",
       position: "Publicity Head",
       phone: "+91 7079901930",

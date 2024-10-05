@@ -15,10 +15,11 @@ const Contact = () => {
     },
     {
       key: "2",
-      image: "/members/BalaSir.jpg",
-      name: "Balajee",
-      position: "Cultural Head",
-      phone: "+91 9693650110",
+      image: "/members/AryanArya.png",
+      name: "Aryan NK Arya",
+      position: "Treasury Head",
+      phone: "+91 7462077127",
+      insta: "https://www.instagram.com/aryan_n_k_arya"
     },
     {
       key: "3",
@@ -52,6 +53,13 @@ const Contact = () => {
       phone: "+91 7079901930",
       insta: "https://www.instagram.com/su.bh2807/",
     },
+    {
+      key: "7",
+      image: "/members/BalaSir.jpg",
+      name: "Balajee",
+      position: "Cultural Head",
+      phone: "+91 9693650110",
+    }
   ];
 
   return (

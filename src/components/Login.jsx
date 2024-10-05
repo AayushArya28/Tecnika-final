@@ -99,17 +99,17 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <div className="container mx-auto p-20 py-28 overflow-hidden sm:bg-[url(/login-pc.jpg)] bg-[url(/login-mobile.jpg)] bg-cover bg-no-repeat md:pr-28 pr-2">
-        <div className="flex items-center justify-center sm:justify-end w-full">
-          <div className="w-full max-w-md scale-[.80] sm:scale-100">
+    <div className="min-h-screen w-full bg-[url(/login-mobile.jpg)] sm:bg-[url(/login-pc.jpg)] bg-cover bg-center bg-no-repeat flex items-center justify-center sm:block">
+      <div className="container mx-auto p-4 sm:p-8 md:p-12 lg:p-20 overflow-hidden min-h-screen sm:min-h-0">
+        <div className="flex items-center justify-center sm:justify-end w-full h-full">
+          <div className="w-full max-w-md scale-100 sm:scale-90 md:scale-100 sm:translate-y-0 lg:translate-x-0 mt-16 sm:mt-0">
             <div className="bg-[#17252A] rounded-lg shadow-lg p-8">
-              <h1 className="text-center text-4xl font-bold text-[#FEFFFF] mb-8">
+              <h1 className="text-center text-3xl sm:text-4xl font-bold text-[#FEFFFF] mb-8">
                 Login
               </h1>
               <form
                 action="#"
-                className="flex flex-col gap-4 font-Default text-lg"
+                className="flex flex-col gap-4 font-Default text-base sm:text-lg"
                 ref={form_ref}
                 onSubmit={LoginUser}
               >
@@ -175,7 +175,7 @@ const Login = () => {
               {/* Forgot Password Button */}
               <button
                 onClick={handleForgotPassword}
-                className="text-white hover:text-slate-300 mt-4 underline"
+                className="text-white hover:text-slate-300 mt-4 underline text-sm sm:text-base"
               >
                 Forgot Password?
               </button>

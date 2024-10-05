@@ -26,7 +26,7 @@ const Footer = () => {
             <img
               src={BitLogo}
               alt="BIT Mesra Logo"
-              className="w-12 sm:w-16 md:w-20 h-auto object-contain mb-1 sm:mb-3 pointer-events-none"
+              className="w-12 sm:w-16 md:w-28 h-auto object-contain mb-1 sm:mb-3 pointer-events-none"
             />
             <p className="text-[8px] sm:text-xs md:text-sm text-gray-400">&copy; 2024 TECHNIKA. All Rights Reserved.</p>
           </div>

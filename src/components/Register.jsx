@@ -43,16 +43,7 @@ const Register = () => {
     if (!formRef.current) return;
     const formData = new FormData(formRef.current);
     const formObj = Object.fromEntries(formData.entries());
-    const {
-      name,
-      email,
-      phone_Number,
-      college,
-      address,
-      password,
-      gender,
-      year,
-    } = formObj;
+    const { name, email, password, reenterPassword } = formObj;
 
     try {
       if (!isPasswordValid(password)) {
@@ -60,11 +51,8 @@ const Register = () => {
           "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character"
         );
       }
-      if (gender === "none") {
-        throw Error("Please select your gender");
-      }
-      if (year === "none") {
-        throw Error("Please select your year");
+      if (password !== reenterPassword) {
+        throw Error("Passwords do not match");
       }
       const createUser = await createUserWithEmailAndPassword(
         auth,
@@ -90,11 +78,6 @@ const Register = () => {
             userId: createUser.user.uid,
             email: email.toLowerCase(),
             name: name.trim(),
-            phone_Number: phone_Number.trim(),
-            college: college,
-            address: address,
-            gender: gender,
-            year: year,
             dateCreated: new Date(),
           });
           console.log(auth);
@@ -175,78 +158,6 @@ const Register = () => {
                   />
                 </div>
 
-                {/* Phone Number input */}
-                <div>
-                  <label htmlFor="phone_Number" className="text-[#DEF2F1] mb-1 block">Phone Number</label>
-                  <input
-                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
-                    type="tel"
-                    placeholder="Enter phone number"
-                    required
-                    name="phone_Number"
-                    id="phone_Number"
-                    maxLength={10}
-                    minLength={10}
-                  />
-                </div>
-
-                {/* Gender select */}
-                <div>
-                  <label htmlFor="gender" className="text-[#DEF2F1] mb-1 block">Gender</label>
-                  <select
-                    name="gender"
-                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
-                    required
-                  >
-                    <option value="none">Select Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="others">Others/Not Specified</option>
-                  </select>
-                </div>
-
-                {/* Year select */}
-                <div>
-                  <label htmlFor="year" className="text-[#DEF2F1] mb-1 block">Year</label>
-                  <select
-                    name="year"
-                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
-                    required
-                  >
-                    <option value="none">Select Year</option>
-                    <option value="first">1st</option>
-                    <option value="second">2nd</option>
-                    <option value="third">3rd</option>
-                    <option value="fourth">4th</option>
-                  </select>
-                </div>
-
-                {/* College input */}
-                <div>
-                  <label htmlFor="college" className="text-[#DEF2F1] mb-1 block">College</label>
-                  <input
-                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
-                    type="text"
-                    placeholder="Enter college name"
-                    required
-                    name="college"
-                    id="college"
-                  />
-                </div>
-
-                {/* Address input */}
-                <div>
-                  <label htmlFor="address" className="text-[#DEF2F1] mb-1 block">Address</label>
-                  <input
-                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
-                    type="text"
-                    placeholder="Enter address"
-                    required
-                    name="address"
-                    id="address"
-                  />
-                </div>
-
                 {/* Password input */}
                 <div>
                   <label htmlFor="password" className="text-[#DEF2F1] mb-1 block">Password</label>
@@ -266,6 +177,19 @@ const Register = () => {
                       <Icon icon={icon} size={20} className="text-[#3AAFA9]" />
                     </span>
                   </div>
+                </div>
+
+                {/* Re-enter Password input */}
+                <div>
+                  <label htmlFor="reenterPassword" className="text-[#DEF2F1] mb-1 block">Re-enter Password</label>
+                  <input
+                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
+                    type="password"
+                    placeholder="Re-enter password"
+                    required
+                    name="reenterPassword"
+                    id="reenterPassword"
+                  />
                 </div>
 
                 <button

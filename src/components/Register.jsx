@@ -8,7 +8,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { sendEmailVerification } from "firebase/auth";
 import { app, db } from "../firebase";
-import axios from "axios";
 
 import {
   getAuth,

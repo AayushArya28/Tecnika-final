@@ -44,7 +44,7 @@ const Contact = () => {
     {
       key: "6",
       image:
-        "src/assets/365293.jpg",
+        "src/assets/AdarshRaj.jpg",
       name: "Aadarsh Raj Alok",
       phone: "+91 7079901930",
       insta: "https://www.instagram.com/abhisheekk._?igsh=NXZmNmNtcXRvNXQ0",

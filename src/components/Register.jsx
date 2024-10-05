@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import Astro from "../assets/astro.png";
-import { Fade } from "react-awesome-reveal";
 import { Icon } from "react-icons-kit";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
@@ -136,149 +134,150 @@ const Register = () => {
   //       navigate("/");
   //     }
   //   });
-  //   console.log(formData);
-  //   // donot set in local storage, will be handled by auth
-  //   //localStorage.setItem("formData", JSON.stringify(formData));
-  // }, [formData]);
+  // }, []);
 
   return (
     <div>
-      <div className="container  mx-auto  p-20 overflow-hidden">
-        <div className="flex items-start w-full relative justify-center lg:justify-end ">
-          <Fade triggerOnce>
-            <figure className="w-1/2 absolute -top-6 left-24 scale-125 z-0 hidden lg:block">
-              <img src={Astro} alt=" Astronaut" />
-            </figure>
-          </Fade>
-
-          <div className="  lg:w-1/2 py-12 z-10  ">
-            <div className=" min-h-fit w-72 md:w-[355px] lg:w-[550px] bg-primary  flex items-center flex-col gap-8 py-8 font-Default contact-form-shadow ">
-              <h1 className="text-center text-5xl font-bold lowercase">
+      <div className="container mx-auto p-20 overflow-hidden">
+        <div className="flex items-center justify-center w-full">
+          <div className="w-full max-w-md">
+            <div className="bg-[#17252A] rounded-lg shadow-lg p-8">
+              <h1 className="text-center text-4xl font-bold text-[#FEFFFF] mb-8">
                 Register
               </h1>
               <form
-                action="#"
                 ref={formRef}
-                className="flex flex-col gap-1 font-Default text-lg lowercase "
+                className="flex flex-col gap-4 font-Default text-lg"
                 onSubmit={CreateUser}
               >
-                <label htmlFor="name">Name</label>
-                <input
-                  className="w-60 md:w-80 h-10 border border-black bg-primary focus:outline-none focus:text-black  px-2 py-2 nav_Box_shadow"
-                  type="text"
-                  placeholder="name"
-                  name="name"
-                  minLength={3}
-                  maxLength={100}
-                  required
-                  title="Enter Your name"
-                  autoComplete="off"
-                  id="name"
-                />
-                <label htmlFor="email">Email</label>
-                <input
-                  className=" h-10 w-60 md:w-80 border border-black  bg-primary focus:outline-none focus:text-black  px-2 py-2 nav_Box_shadow"
-                  type="email"
-                  placeholder="enter email"
-                  required
-                  title="Enter Email"
-                  name="email"
-                  autoComplete="off"
-                  id="email"
-                />
-                <label htmlFor="phone_Number">Phone Number</label>
-                <input
-                  className=" h-10 w-60 md:w-80 border border-black bg-primary focus:outline-none focus:text-black  px-2 py-2 nav_Box_shadow"
-                  type="tel"
-                  placeholder="enter phone number without +91"
-                  required
-                  title="Enter Phone Number"
-                  name="phone_Number"
-                  autoComplete="off"
-                  id="phone_Number"
-                  maxLength={10}
-                  minLength={10}
-                />
-                <label htmlFor="gender">gender</label>
-                <select
-                  name="gender"
-                  className=" h-10 w-60 md:w-80 border border-black bg-primary focus:outline-none focus:text-black  px-2 py-2 nav_Box_shadow"
-                  required
-                >
-                  <option value="none">select gender</option>
-                  <option value="male">male</option>
-
-                  <option value="female">female</option>
-
-                  <option value="others">others/not specified</option>
-                </select>
-                <label htmlFor="year">year</label>
-                <select
-                  name="year"
-                  className=" h-10 w-60 md:w-80 border border-black bg-primary focus:outline-none focus:text-black  px-2 py-2 nav_Box_shadow"
-                  required
-                >
-                  <option value="none">select year</option>
-                  <option value="first">1st</option>
-
-                  <option value="second">2nd</option>
-
-                  <option value="third">3rd</option>
-
-                  <option value="fourth">4th</option>
-                </select>
-                <label htmlFor="college">college</label>
-                <input
-                  className=" h-10 w-60 md:w-80 border border-black bg-primary focus:outline-none focus:text-black  px-2 py-2 nav_Box_shadow"
-                  type="text"
-                  placeholder="enter college name"
-                  required
-                  title="Enter College Name"
-                  name="college"
-                  autoComplete="off"
-                  id="college"
-                />
-                <label htmlFor="address">Address</label>
-                <input
-                  className=" h-10 w-60 md:w-80 border border-black bg-primary focus:outline-none focus:text-black  px-2 py-2 nav_Box_shadow"
-                  type="text"
-                  placeholder="enter address"
-                  required
-                  title="Enter Address"
-                  name="address"
-                  autoComplete="off"
-                  id="address"
-                />
-
-                <label htmlFor="password">Password</label>
-                <div className="relative">
+                {/* Name input */}
+                <div>
+                  <label htmlFor="name" className="text-[#DEF2F1] mb-1 block">Name</label>
                   <input
-                    className="h-10 w-60 md:w-80 border border-black bg-primary focus:outline-none focus:text-black  px-2 py-2 nav_Box_shadow "
-                    type={type}
-                    placeholder="password"
+                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
+                    type="text"
+                    placeholder="Enter name"
                     required
-                    title="Enter Password"
-                    name="password"
-                    autoComplete="off"
-                    id="password"
+                    name="name"
+                    id="name"
                   />
-                  <span
-                    className=" absolute  top-1 right-5 md:right-4 lg:right-3"
-                    onClick={handleToggle}
+                </div>
+
+                {/* Email input */}
+                <div>
+                  <label htmlFor="email" className="text-[#DEF2F1] mb-1 block">Email</label>
+                  <input
+                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
+                    type="email"
+                    placeholder="Enter email"
+                    required
+                    name="email"
+                    id="email"
+                  />
+                </div>
+
+                {/* Phone Number input */}
+                <div>
+                  <label htmlFor="phone_Number" className="text-[#DEF2F1] mb-1 block">Phone Number</label>
+                  <input
+                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
+                    type="tel"
+                    placeholder="Enter phone number"
+                    required
+                    name="phone_Number"
+                    id="phone_Number"
+                    maxLength={10}
+                    minLength={10}
+                  />
+                </div>
+
+                {/* Gender select */}
+                <div>
+                  <label htmlFor="gender" className="text-[#DEF2F1] mb-1 block">Gender</label>
+                  <select
+                    name="gender"
+                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
+                    required
                   >
-                    <Icon className="" icon={icon} size={20} />
-                  </span>
+                    <option value="none">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="others">Others/Not Specified</option>
+                  </select>
+                </div>
+
+                {/* Year select */}
+                <div>
+                  <label htmlFor="year" className="text-[#DEF2F1] mb-1 block">Year</label>
+                  <select
+                    name="year"
+                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
+                    required
+                  >
+                    <option value="none">Select Year</option>
+                    <option value="first">1st</option>
+                    <option value="second">2nd</option>
+                    <option value="third">3rd</option>
+                    <option value="fourth">4th</option>
+                  </select>
+                </div>
+
+                {/* College input */}
+                <div>
+                  <label htmlFor="college" className="text-[#DEF2F1] mb-1 block">College</label>
+                  <input
+                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
+                    type="text"
+                    placeholder="Enter college name"
+                    required
+                    name="college"
+                    id="college"
+                  />
+                </div>
+
+                {/* Address input */}
+                <div>
+                  <label htmlFor="address" className="text-[#DEF2F1] mb-1 block">Address</label>
+                  <input
+                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
+                    type="text"
+                    placeholder="Enter address"
+                    required
+                    name="address"
+                    id="address"
+                  />
+                </div>
+
+                {/* Password input */}
+                <div>
+                  <label htmlFor="password" className="text-[#DEF2F1] mb-1 block">Password</label>
+                  <div className="relative">
+                    <input
+                      className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
+                      type={type}
+                      placeholder="Enter password"
+                      required
+                      name="password"
+                      id="password"
+                    />
+                    <span
+                      className="absolute top-3 right-3 cursor-pointer"
+                      onClick={handleToggle}
+                    >
+                      <Icon icon={icon} size={20} className="text-[#3AAFA9]" />
+                    </span>
+                  </div>
                 </div>
 
                 <button
                   className={`
-                  text-white bg-[#9360FA] border border-white nav_Box_shadow h-10 font-Default w-1/3 text-center mx-auto 
-                  ${!isPasswordValid() ? "mt-14" : "my-5"}
-                      `}
+                    text-[#FEFFFF] bg-[#2B7A78] hover:bg-[#3AAFA9] transition-colors duration-300 rounded h-10 font-Default w-full text-center mt-4
+                    ${loading ? 'opacity-50 cursor-not-allowed' : ''}
+                  `}
                   type="submit"
                   disabled={loading}
                 >
-                  {loading ? "loading..." : "register"}
+                  {loading ? "Loading..." : "Register"}
                 </button>
               </form>
             </div>

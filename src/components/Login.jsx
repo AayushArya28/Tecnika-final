@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import Astro from "../assets/astro.png";
-import { Fade } from "react-awesome-reveal";
 import { Icon } from "react-icons-kit";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { eye } from "react-icons-kit/feather/eye";
@@ -64,15 +62,13 @@ const Login = () => {
         let interval = setInterval(async () => {
           if (auth.currentUser.emailVerified) {
             clearInterval(interval);
-            // console.log(auth);
-            window.location.href = "/competitions";
+            window.location.href = "/events";
           }
           await auth.currentUser.reload();
         }, 2000);
       } else {
-        window.location.href = "/competitions";
+        window.location.href = "/events";
       }
-      // console.log(loginUser);
       localStorage.setItem(
         "authUser",
         JSON.stringify({
@@ -90,65 +86,62 @@ const Login = () => {
 
   return (
     <div>
-      <div className="container  mx-auto  p-20 overflow-hidden">
-        <div className="flex items-start w-full relative justify-center lg:justify-end ">
-          <Fade triggerOnce>
-            <figure className="w-1/2 absolute -top-6 left-24 scale-125 z-0 hidden lg:block">
-              <img src={Astro} alt=" Astronaut" />
-            </figure>
-          </Fade>
-
-          <div className="  lg:w-1/2 py-12 z-10  ">
-            <div className=" min-h-fit w-72 md:w-[355px] lg:w-[550px] bg-primary  flex items-center flex-col gap-8 py-8 font-Default contact-form-shadow ">
-              <h1 className="text-center text-5xl font-bold lowercase">
+      <div className="container mx-auto p-20 overflow-hidden">
+        <div className="flex items-center justify-center w-full">
+          <div className="w-full max-w-md">
+            <div className="bg-[#17252A] rounded-lg shadow-lg p-8">
+              <h1 className="text-center text-4xl font-bold text-[#FEFFFF] mb-8">
                 Login
               </h1>
               <form
                 action="#"
-                className="flex flex-col gap-1 font-Default text-lg lowercase "
+                className="flex flex-col gap-4 font-Default text-lg"
                 ref={form_ref}
                 onSubmit={LoginUser}
               >
-                <label htmlFor="email">Email</label>
-                <input
-                  className=" h-10 w-60 md:w-80 border border-black  bg-primary focus:outline-none focus:text-black  px-2 py-2 nav_Box_shadow"
-                  type="email"
-                  placeholder="enter email"
-                  required
-                  title="Enter Email"
-                  name="email"
-                  autoComplete="email"
-                  id="email"
-                />
-
-                <label htmlFor="password">Password</label>
-                <div className="relative">
+                <div>
+                  <label htmlFor="email" className="text-[#DEF2F1] mb-1 block">Email</label>
                   <input
-                    className="h-10 w-60 md:w-80 border border-black bg-primary focus:outline-none focus:text-black  px-2 py-2 nav_Box_shadow "
-                    type={type}
-                    placeholder="password"
+                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
+                    type="email"
+                    placeholder="Enter email"
                     required
-                    title="Enter Password"
-                    name="password"
-                    autoComplete="off"
-                    id="password"
+                    name="email"
+                    autoComplete="email"
+                    id="email"
                   />
-                  <span
-                    className=" absolute  top-1 right-5 md:right-4 lg:right-3"
-                    onClick={handleToggle}
-                  >
-                    <Icon className="" icon={icon} size={20} />
-                  </span>
+                </div>
+
+                <div>
+                  <label htmlFor="password" className="text-[#DEF2F1] mb-1 block">Password</label>
+                  <div className="relative">
+                    <input
+                      className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
+                      type={type}
+                      placeholder="Password"
+                      required
+                      name="password"
+                      autoComplete="current-password"
+                      id="password"
+                    />
+                    <span
+                      className="absolute top-3 right-3 cursor-pointer"
+                      onClick={handleToggle}
+                    >
+                      <Icon icon={icon} size={20} className="text-[#3AAFA9]" />
+                    </span>
+                  </div>
                 </div>
 
                 <button
                   className={`
-                  text-white bg-[#9360FA] border border-white nav_Box_shadow h-10 font-Default w-1/3 text-center mx-auto my-4 
-                      `}
+                  text-[#FEFFFF] bg-[#2B7A78] hover:bg-[#3AAFA9] transition-colors duration-300 rounded h-10 font-Default w-full text-center mt-4
+                  ${loading ? 'opacity-50 cursor-not-allowed' : ''}
+                  `}
                   type="submit"
                   disabled={loading}
                 >
-                  {loading ? "loading..." : "login"}
+                  {loading ? "Loading..." : "Login"}
                 </button>
               </form>
             </div>

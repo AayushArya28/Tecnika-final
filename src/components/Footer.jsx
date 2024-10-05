@@ -7,16 +7,16 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
           <div className="w-full md:w-1/3 text-center md:text-left space-y-3">
-            <h3 className="text-xl">TECHNIKA 2024</h3>
+            <h3 className="text-3xl">TECHNIKA 2024</h3>
             <p className="text-sm md:text-base">INNOVATING TODAY, SUSTAINING TOMORROW</p>
             <div className="flex flex-col items-center md:items-start mt-3">
-              <span className="text-sm mb-2">FOLLOW US ON</span>
+              <span className="text-md mb-2">FOLLOW US ON</span>
               <div className="flex">
-                <a href="#" className="text-white hover:text-gray-400 mr-4 transition-colors duration-300">
-                  <FaYoutube size={20} />
+                <a href="https://www.youtube.com/@technikabitp" className="text-white hover:text-red-500 mr-4 transition-colors duration-300">
+                  <FaYoutube size={28} />
                 </a>
-                <a href="#" className="text-white hover:text-gray-400 transition-colors duration-300">
-                  <FaInstagram size={20} />
+                <a href="https://www.instagram.com/technika_bitp/" className="text-white hover:text-pink-500 transition-colors duration-300">
+                  <FaInstagram size={28} />
                 </a>
               </div>
             </div>
@@ -26,9 +26,9 @@ const Footer = () => {
             <img
               src={BitLogo}
               alt="BIT Mesra Logo"
-              className="w-20 md:w-24 h-auto object-contain mb-3 pointer-events-none"
+              className="w-20 md:w-32 h-auto object-contain mb-3 pointer-events-none"
             />
-            <p className="text-sm text-gray-400">&copy; 2024 TECHNIKA. All rights reserved.</p>
+            <p className="text-sm text-gray-400">&copy; 2024 TECHNIKA. All Rights Reserved.</p>
           </div>
 
           <div className="w-full md:w-1/3 text-center md:text-right space-y-1 md:space-y-2">

@@ -60,56 +60,80 @@ const ImageCarousel = () => {
         {/* Image slides */}
         <SplideSlide>
           <img
-            src="https://images.unsplash.com/photo-1601850494422-3cf14624b0b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Image 1"
+            src="/slideshow/cultural.png"
+            alt="Cultural Event"
             className={imageClassName}
             loading="lazy"
           />
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/src/assets/num anine.jpg"
-            alt="Image 2"
+            src="/slideshow/dance.png"
+            alt="Dance"
             className={imageClassName}
             loading="lazy"
           />
         </SplideSlide>
         <SplideSlide>
           <img
-            src="https://images.unsplash.com/photo-1578632749014-ca77efd052eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Image 3"
+            src="/slideshow/dance2.png"
+            alt="Group Dance"
             className={imageClassName}
             loading="lazy"
           />
         </SplideSlide>
         <SplideSlide>
           <img
-            src="https://images.unsplash.com/photo-1601850494422-3cf14624b0b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Image 4"
+            src="/slideshow/dj.png"
+            alt="DJ"
             className={imageClassName}
             loading="lazy"
           />
         </SplideSlide>
         <SplideSlide>
           <img
-            src="https://images.unsplash.com/photo-1578632749014-ca77efd052eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Image 5"
+            src="/slideshow/fashion.png"
+            alt="Fashion"
             className={imageClassName}
             loading="lazy"
           />
         </SplideSlide>
         <SplideSlide>
           <img
-            src="https://images.unsplash.com/photo-1601850494422-3cf14624b0b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Image 6"
+            src="/slideshow/paintball.png"
+            alt="Paint Ball"
             className={imageClassName}
             loading="lazy"
           />
         </SplideSlide>
         <SplideSlide>
           <img
-            src="https://images.unsplash.com/photo-1601850494422-3cf14624b0b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Image 7"
+            src="/slideshow/pitching.png"
+            alt="Pitching"
+            className={imageClassName}
+            loading="lazy"
+          />
+        </SplideSlide>
+        <SplideSlide>
+          <img
+            src="/slideshow/singing.png"
+            alt="Singing"
+            className={imageClassName}
+            loading="lazy"
+          />
+        </SplideSlide>
+        <SplideSlide>
+          <img
+            src="/slideshow/tall-tower.png"
+            alt="Tall Tower"
+            className={imageClassName}
+            loading="lazy"
+          />
+        </SplideSlide>
+        <SplideSlide>
+          <img
+            src="/slideshow/tech.png"
+            alt="Tech Event"
             className={imageClassName}
             loading="lazy"
           />

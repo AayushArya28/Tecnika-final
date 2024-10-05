@@ -125,7 +125,7 @@ const NavBar = ({ logged }) => {
           Merchandise
         </a>
         <Link
-          to="/competitions"
+          to="/events"
           onClick={handleOpen}
           className="flex items-center text-white hover:text-[#af3a40] transition-all duration-300 text-2xl"
         >

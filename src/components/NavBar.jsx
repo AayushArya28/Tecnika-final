@@ -114,14 +114,6 @@ const NavBar = ({ logged }) => {
           <Icon icon={home} size={24} className="mr-2" />
           Home
         </Link>
-        <Link
-          to="/competitions"
-          onClick={handleOpen}
-          className="flex items-center text-white hover:text-[#af3a40] transition-all duration-300 text-2xl"
-        >
-          <Icon icon={calendar} size={24} className="mr-2" />
-          Competitions
-        </Link>
         <a
           href="https://forms.gle/oVjowrQF1KJ7iRHB8"
           target="_blank"
@@ -132,6 +124,15 @@ const NavBar = ({ logged }) => {
           <Icon icon={shoppingCart} size={24} className="mr-2" />
           Merchandise
         </a>
+        <Link
+          to="/competitions"
+          onClick={handleOpen}
+          className="flex items-center text-white hover:text-[#af3a40] transition-all duration-300 text-2xl"
+        >
+          <Icon icon={calendar} size={24} className="mr-2" />
+          Events
+        </Link>
+        
         <Link
           to="/workshops"
           onClick={handleOpen}

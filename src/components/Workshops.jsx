@@ -6,11 +6,12 @@ import CardContainer from "./CardContainer";
 import Eco from "../assets/eco.png";
 import "../general.css";
 
-const WorkshopDetails = ({ title, description, formLink }) => {
+const WorkshopDetails = ({ title, description, formLink, pricing }) => {
   return (
     <div className="bg-white p-6 border-4 border-green-600 text-black rounded-lg max-w-xl mx-auto mt-8 shadow-lg z-20">
       <h2 className="text-3xl font-bold mb-4 text-center">{title}</h2>
       <p className="text-lg mb-4 text-center">{description}</p>
+      <p className="text-md sm:text-lg font-semibold text-center mb-4">Price: {`₹ ${pricing}`}</p>
       <div className="flex justify-center">
         <a
           href={formLink}
@@ -86,6 +87,7 @@ const Workshops = () => {
               image={workshop.image}
               title={workshop.name}
               description={workshop.desc}
+              pricing={workshop.pricing}
               onClick={() => handleWorkshopClick(workshop)}
             />
           </div>
@@ -99,6 +101,7 @@ const Workshops = () => {
             title={selectedWorkshop.name}
             description={selectedWorkshop.desc}
             formLink={selectedWorkshop.formLink}
+            pricing={selectedWorkshop.pricing}
           />
         </div>
       )}

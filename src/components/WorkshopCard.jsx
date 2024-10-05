@@ -1,7 +1,7 @@
 import React from "react";
 import "../general.css";
 
-const WorkshopCard = ({ image, title, description, onClick }) => {
+const WorkshopCard = ({ image, title, description, onClick, pricing }) => {
   return (
     <div
       className="bg-gradient-to-r from-gray-800 via-gray-900 to-black p-3 border-2 border-gray-700 rounded-lg shadow-lg hover:shadow-2xl cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out max-w-sm mx-auto"
@@ -30,6 +30,7 @@ const WorkshopCard = ({ image, title, description, onClick }) => {
           {title}
         </h3>
         <p className="text-sm text-gray-300">{description}</p>
+        <p className="text-md font-semibold text-gray-300 my-4">Price: {`₹ ${pricing}`}</p>
       </div>
     </div>
   );

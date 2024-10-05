@@ -84,7 +84,7 @@ const Workshops = () => {
           >
             <WorkshopCard
               key={workshop.id}
-              image={workshop.image}
+              image={workshop.img}
               title={workshop.name}
               description={workshop.desc}
               pricing={workshop.pricing}

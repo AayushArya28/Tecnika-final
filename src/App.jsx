@@ -15,7 +15,8 @@ import CheckOut from "./components/CheckOut";
 import FormTeam from "./components/FormTeam";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
-import Footer from "./components/Footer";  // Import Footer
+import Footer from "./components/Footer";
+import "./font.css";
 
 export default function App() {
   const auth = getAuth();

@@ -145,6 +145,32 @@ const Register = () => {
                   />
                 </div>
 
+                {/* College Name input */}
+                <div>
+                  <label htmlFor="collegeName" className="text-[#DEF2F1] mb-1 block">College Name</label>
+                  <input
+                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
+                    type="text"
+                    placeholder="Enter college name"
+                    required
+                    name="collegeName"
+                    id="collegeName"
+                  />
+                </div>
+
+                {/* Contact Number input */}
+                <div>
+                  <label htmlFor="contactNumber" className="text-[#DEF2F1] mb-1 block">Contact Number</label>
+                  <input
+                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
+                    type="tel"
+                    placeholder="Enter contact number"
+                    required
+                    name="contactNumber"
+                    id="contactNumber"
+                  />
+                </div>
+
                 {/* Email input */}
                 <div>
                   <label htmlFor="email" className="text-[#DEF2F1] mb-1 block">Email</label>
@@ -179,18 +205,7 @@ const Register = () => {
                   </div>
                 </div>
 
-                {/* Re-enter Password input */}
-                <div>
-                  <label htmlFor="reenterPassword" className="text-[#DEF2F1] mb-1 block">Re-enter Password</label>
-                  <input
-                    className="w-full h-10 border border-[#3AAFA9] bg-[#17252A] focus:outline-none focus:border-[#2B7A78] text-[#FEFFFF] px-3 py-2 rounded"
-                    type="password"
-                    placeholder="Re-enter password"
-                    required
-                    name="reenterPassword"
-                    id="reenterPassword"
-                  />
-                </div>
+                
 
                 <button
                   className={`

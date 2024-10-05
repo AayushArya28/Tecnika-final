@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { useRef } from "react";
+// import LoginPC from '../assets/login-pc.jpg';
 
 import {
   getAuth,
@@ -99,9 +100,9 @@ const Login = () => {
 
   return (
     <div>
-      <div className="container mx-auto p-20 overflow-hidden">
-        <div className="flex items-center justify-center w-full">
-          <div className="w-full max-w-md">
+      <div className="container mx-auto p-20 py-28 overflow-hidden sm:bg-[url(/login-pc.jpg)] bg-[url(/login-mobile.jpg)] bg-cover bg-no-repeat md:pr-28 pr-2">
+        <div className="flex items-center justify-center sm:justify-end w-full">
+          <div className="w-full max-w-md scale-[.80] sm:scale-100">
             <div className="bg-[#17252A] rounded-lg shadow-lg p-8">
               <h1 className="text-center text-4xl font-bold text-[#FEFFFF] mb-8">
                 Login
@@ -162,9 +163,8 @@ const Login = () => {
                 <button
                   className={`
                   text-[#FEFFFF] bg-[#2B7A78] hover:bg-[#3AAFA9] transition-colors duration-300 rounded h-10 font-Default w-full text-center mt-4
-                  ${
-                    loading ? "opacity-50 cursor-not-allowed" : ""
-                  }`}
+                  ${loading ? "opacity-50 cursor-not-allowed" : ""
+                    }`}
                   type="submit"
                   disabled={loading}
                 >

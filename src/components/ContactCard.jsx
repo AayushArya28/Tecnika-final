@@ -6,11 +6,10 @@ import PropTypes from "prop-types";
 const ContactCard = ({ image, name, email, phone, insta, linkedin }) => {
   return (
     <div className="relative">
-      {/* <div className="w-[285px] h-[340px] md:w-[380px] bg-gradient-to-r from-green-300 via-blue-400 to-teal-600 p-6 border-4 border-green-600 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out mx-auto font-Default tracking-wider flex flex-col justify-between "> */}
-      <div className="w-[285px] h-[340px] md:w-[380px] bg-gradient-to-r bg-green-200/[0.7] p-6 border-4 border-green-600 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out mx-auto font-Default tracking-wider flex flex-col justify-between ">
+      <div className="w-[285px] h-[340px] md:w-[380px] bg-[#17252A] p-6 border-2 border-[#2B7A78] rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out mx-auto font-Default tracking-wider flex flex-col justify-between">
         {/* Profile Section */}
         <div className="flex justify-center items-center gap-4 w-full">
-          <figure className="overflow-hidden w-32 h-32 rounded-full border-4 border-teal-100">
+          <figure className="overflow-hidden w-32 h-32 rounded-full border-4 border-[#3AAFA9]">
             <img
               className="object-cover w-full h-full rounded-full transition-transform duration-300 hover:scale-110"
               src={image}
@@ -21,9 +20,9 @@ const ContactCard = ({ image, name, email, phone, insta, linkedin }) => {
 
         {/* Name and Contact Info */}
         <div className="text-center mt-3">
-          <p className="text-2xl font-bold text-gray-900 break-words">{name}</p>
+          <p className="text-2xl font-bold text-[#FEFFFF] break-words">{name}</p>
         </div>
-        <div className="flex flex-col gap-2 mt-2 text-lg font-bold text-gray-800 text-center break-words">
+        <div className="flex flex-col gap-2 mt-2 text-lg font-bold text-[#DEF2F1] text-center break-words">
           <p>{phone}</p>
           <p className="text-sm">{email}</p>
         </div>
@@ -36,9 +35,8 @@ const ContactCard = ({ image, name, email, phone, insta, linkedin }) => {
             rel="noopener noreferrer"
             className="transition-transform transform hover:scale-125"
           >
-            <Icon icon={instagram} size={40} className="text-gray-900 hover:text-pink-400" />
+            <Icon icon={instagram} size={40} className="text-[#3AAFA9] hover:text-[#DEF2F1]" />
           </a>
-         
         </div>
       </div>
     </div>

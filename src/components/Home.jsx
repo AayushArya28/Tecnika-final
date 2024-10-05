@@ -41,7 +41,7 @@ const Home = ({ logged }) => {
 
         <div className="mt-10 mb-24">
           <Link to={!logged ? "/register" : "/events"}>
-            <button className="w-28 h-10 sm:w-32 sm:h-12 md:w-40 md:h-12 text-base sm:text-xl md:text-2xl cursor-pointer font-bold transition duration-300 ease-in-out font-Default rounded-full bg-white hover:bg-[#ff4b2b] hover:text-white shadow-lg transform hover:scale-110 active:scale-95">
+            <button className="w-28 h-10 sm:w-32 sm:h-12 md:w-40 md:h-12 text-base sm:text-xl md:text-2xl cursor-pointer font-bold transition duration-300 ease-in-out font-Default rounded-full bg-white text-black hover:bg-[#af3a40] hover:text-white shadow-lg transform hover:scale-110 active:scale-95">
               {!logged ? "Register" : "Explore"}
             </button>
           </Link>

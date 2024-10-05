@@ -30,7 +30,7 @@ const Events = () => {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const collections = ['technical', 'fun', 'workshop', 'esports'];
+      const collections = ['technical','Cultural','fun', 'esports'];
       const allEvents = [];
 
       for (const collectionName of collections) {
@@ -54,7 +54,7 @@ const Events = () => {
     return filteredEvents.filter(event => event.category === category);
   };
 
-  const categories = ['technical', 'fun', 'workshop', 'esports'];
+  const categories = ['technical','Cultural','fun', 'esports'];
 
   return (
     <div className="relative container mx-auto overflow-hidden w-full px-4 py-8">
@@ -85,16 +85,17 @@ const Events = () => {
         categories.map(category => (
           <div key={category} className="mb-8">
             <h2 className="text-2xl font-bold text-white mb-4">{category.charAt(0).toUpperCase() + category.slice(1)}</h2>
-            <div className="space-y-1">
+            <div className="flex flex-wrap -mx-2">
               {getEventsByCategory(category).map((event) => (
-                <EventCard
-                  key={event.id}
-                  img={event.img}
-                  name={event.name}
-                  desc={event.desc}
-                  pricing={event.pricing}
-                  formLink={event.formLink}
-                />
+                <div key={event.id} className="w-full sm:w-1/2 px-2 mb-4">
+                  <EventCard
+                    img={event.img}
+                    name={event.name}
+                    desc={event.desc}
+                    pricing={event.pricing}
+                    formLink={event.formLink}
+                  />
+                </div>
               ))}
             </div>
             {getEventsByCategory(category).length === 0 && (
@@ -103,16 +104,17 @@ const Events = () => {
           </div>
         ))
       ) : (
-        <div className="space-y-1 relative z-10">
+        <div className="flex flex-wrap -mx-2 relative z-10">
           {filteredEvents.map((event) => (
-            <EventCard
-              key={event.id}
-              img={event.img}
-              name={event.name}
-              desc={event.desc}
-              pricing={event.pricing}
-              formLink={event.formLink}
-            />
+            <div key={event.id} className="w-full sm:w-1/2 px-2 mb-4">
+              <EventCard
+                img={event.img}
+                name={event.name}
+                desc={event.desc}
+                pricing={event.pricing}
+                formLink={event.formLink}
+              />
+            </div>
           ))}
         </div>
       )}

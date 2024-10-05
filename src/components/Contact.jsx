@@ -7,7 +7,7 @@ const Contact = () => {
   const contacts = [
     {
       key: "1",
-      image:"src/assets/365293.jpg",
+      image:"src/assets/Suryansh.jpg",
       name: "Suryansh Sinha",
       phone: "+91 8252624667",
       insta:"https://www.instagram.com/_deo.shreyas_?igsh=MXVjcjlkY2ZjNzRpMQ==",

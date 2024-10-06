@@ -72,4 +72,14 @@
   padding: 0 !important;
   margin: 0 !important;
 }
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('./fonts/go3v2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+body 
+{
+  font-family: 'MyCustomFont' ;
+}

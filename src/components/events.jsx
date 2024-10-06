@@ -121,7 +121,7 @@ const Events = () => {
         </div>
       )}
 
-      {/* Remove the selectedEvent rendering and onClick functionality */}
+      
     </div>
   );
 };

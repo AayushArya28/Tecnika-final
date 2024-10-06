@@ -2,7 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../general.css";
 
-const EventCard = ({ img, name, desc, pricing, formLink, onClick, eventType }) => {
+const EventCard = ({
+  img,
+  name,
+  desc,
+  pricing,
+  formLink,
+  onClick,
+  eventType,
+}) => {
   let eventCat;
 
   switch (eventType) {
@@ -13,10 +21,13 @@ const EventCard = ({ img, name, desc, pricing, formLink, onClick, eventType }) =
       eventCat = "Team";
       break;
     default:
-      eventCat = "Solo"
+      eventCat = "Solo";
   }
   return (
-    <div onClick={onClick} className="bg-gradient-to-r from-gray-800 via-gray-900 to-black p-4 sm:p-6 border-2 border-gray-700 rounded-lg shadow-lg hover:shadow-2xl cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out w-full mb-8">
+    <div
+      onClick={onClick}
+      className="bg-gradient-to-r from-gray-800 via-gray-900 to-black p-4 sm:p-6 border-2 border-gray-700 rounded-lg shadow-lg hover:shadow-2xl cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out w-full mb-8"
+    >
       <div className="flex flex-col sm:flex-row">
         {/* Image section with fallback */}
         <div className="relative w-full sm:w-1/3 mb-4 sm:mb-0 sm:mr-6">
@@ -37,13 +48,17 @@ const EventCard = ({ img, name, desc, pricing, formLink, onClick, eventType }) =
 
         {/* Content section */}
         <div className="flex-1 text-white">
-          <h3 className="text-xl sm:text-2xl font-extrabold mb-2">
-            {name}
-          </h3>
+          <h3 className="text-xl sm:text-2xl font-extrabold mb-2">{name}</h3>
           <p className="text-sm sm:text-md text-gray-300 mb-4">{desc}</p>
-          <p className="text-md sm:text-lg font-semibold text-gray-300 mb-4">{`₹ ${pricing}`}</p>
-          <p className="text-sm sm:text-md text-gray-300 mb-4">Registration Type:
-            <span className="text-md sm:text-md font-semibold text-gray-300 mb-4"> {eventCat}</span>
+          <p className="text-md sm:text-lg font-semibold text-gray-300 mb-4">{`₹ ${pricing} ${
+            eventCat !== "Solo" ? "per person" : ""
+          }`}</p>
+          <p className="text-sm sm:text-md text-gray-300 mb-4">
+            Registration Type:
+            <span className="text-md sm:text-md font-semibold text-gray-300 mb-4">
+              {" "}
+              {eventCat}
+            </span>
           </p>
 
           <Link target="_blank" rel="noopener noreferrer" to={formLink}>

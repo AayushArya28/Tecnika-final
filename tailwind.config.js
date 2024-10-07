@@ -10,6 +10,9 @@ export default {
         Default: ["Urbanist", "sans-serif"],
         'anime': ['go3v2'],
       },
+      screens: {
+        'xs': '380px',
+      }
     },
   },
   plugins: [],

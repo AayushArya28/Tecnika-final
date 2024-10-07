@@ -39,7 +39,7 @@ const EventCard = ({
             />
           ) : (
             <div className="w-full h-48 sm:h-full bg-gray-700 flex items-center justify-center rounded-lg">
-              <span className="text-white text-lg">Image not available</span>
+              <span className="text-white text-lg font-Default  ">Image not available</span>
             </div>
           )}
           {/* Gradient overlay for hover effect */}
@@ -47,7 +47,7 @@ const EventCard = ({
         </div>
 
         {/* Content section */}
-        <div className="flex-1 text-white">
+        <div className="flex-1 text-white font-Default">
           <h3 className="text-xl sm:text-2xl font-extrabold mb-2">{name}</h3>
           <p className="text-sm sm:text-md text-gray-300 mb-4">{desc}</p>
           <p className="text-md sm:text-lg font-semibold text-gray-300 mb-4">{`₹ ${pricing} ${

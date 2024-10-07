@@ -98,7 +98,7 @@ const NavBar = ({ logged }) => {
       <div
         className={`${
           menuOpen ? "translate-x-0" : "translate-x-full"
-        } md:hidden fixed top-0 right-0 w-full h-screen bg-[#17252a] text-white z-50 transition-transform duration-500 ease-in-out flex flex-col p-8 space-y-6`}
+        } md:hidden fixed top-0 right-0 w-full h-screen bg-[#17252a] text-white z-50 transition-transform duration-500 ease-in-out flex flex-col p-8 space-y-6 `}
       >
         <button
           onClick={handleOpen}
@@ -110,7 +110,7 @@ const NavBar = ({ logged }) => {
         <Link
           to="/"
           onClick={handleOpen}
-          className="flex items-center text-white hover:text-[#af3a40] transition-all duration-300 text-2xl"
+          className="flex items-center text-white hover:text-[#af3a40] transition-all duration-300 text-2xl "
         >
           <Icon icon={home} size={24} className="mr-2" />
           Home

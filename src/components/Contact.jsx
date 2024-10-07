@@ -65,7 +65,7 @@ const Contact = () => {
   return (
     <div className="relative container h-full mx-auto overflow-hidden w-full">
       {/* Title */}
-      <h1 className="text-4xl font-bold text-white text-center pt-6 z-10 relative">
+      <h1 className="text-4xl font-bold text-white text-center pt-6 z-10 relative font-Default">
         CONTACT
       </h1>
 

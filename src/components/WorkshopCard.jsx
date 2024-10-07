@@ -25,7 +25,7 @@ const WorkshopCard = ({ image, title, description, onClick, pricing }) => {
       </div>
 
       {/* Content section */}
-      <div className="p-2 text-white">
+      <div className="p-2 text-white font-Default">
         <h3 className="text-lg font-extrabold mb-1 transition-colors duration-300 hover:text-yellow-500">
           {title}
         </h3>

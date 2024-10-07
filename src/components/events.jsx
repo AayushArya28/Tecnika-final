@@ -57,12 +57,12 @@ const Events = () => {
   const categories = ['technical', 'Cultural', 'fun', 'esports'];
 
   return (
-    <div className="relative container mx-auto overflow-hidden w-full px-4 py-8">
-      <h1 className="text-4xl font-bold text-white text-center mb-8 z-10 relative">
-        Our Events
+    <div className="relative container mx-auto overflow-hidden w-full px-4 py-8 min-h-screen flex flex-col">
+      <h1 className="text-4xl font-bold text-white text-center mb-8 z-10 relative font-Default">
+        OUR EVENTS
       </h1>
 
-      <figure className="w-full h-full absolute inset-0 z-0">
+      <figure className="absolute inset-0 z-0">
         <img
           src={Eco}
           alt="Technika"
@@ -71,22 +71,44 @@ const Events = () => {
       </figure>
 
       {/* Search input */}
-      <div className="relative z-10 mx-auto max-w-md mb-8">
+      <div className="relative z-10 mx-auto max-w-md mb-8 font-Default">
         <input
           type="text"
           placeholder="Search events..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full px-4 py-2 text-gray-900 bg-white bg-opacity-75 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-10 py-2 text-gray-900 bg-white bg-opacity-75 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
-      {searchTerm === "" ? (
-        categories.map(category => (
-          <div key={category} className="mb-8">
-            <h2 className="text-2xl font-bold text-white mb-4">{category.charAt(0).toUpperCase() + category.slice(1)}</h2>
+      <div className="flex-grow z-10">
+        {searchTerm === "" ? (
+          categories.map(category => (
+            <div key={category} className="mb-8">
+              <h2 className="text-2xl font-bold text-white mb-4">{category.charAt(0).toUpperCase() + category.slice(1)}</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+                {getEventsByCategory(category).map((event) => (
+                  <div key={event.id}>
+                    <EventCard
+                      img={event.img}
+                      name={event.name}
+                      desc={event.desc}
+                      pricing={event.pricing}
+                      formLink={event.formLink}
+                      eventType={event.eventType}
+                    />
+                  </div>
+                ))}
+              </div>
+              {getEventsByCategory(category).length === 0 && (
+                <p className="text-white text-center mt-2 font-Default">No events found in this category.</p>
+              )}
+            </div>
+          ))
+        ) : (
+          <>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
-              {getEventsByCategory(category).map((event) => (
+              {filteredEvents.map((event) => (
                 <div key={event.id}>
                   <EventCard
                     img={event.img}
@@ -99,29 +121,12 @@ const Events = () => {
                 </div>
               ))}
             </div>
-            {getEventsByCategory(category).length === 0 && (
-              <p className="text-white text-center mt-2">No events found in this category.</p>
+            {filteredEvents.length === 0 && (
+              <p className="text-white text-center mt-4 text-xl font-Default">No events found matching your search.</p>
             )}
-          </div>
-        ))
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 relative z-10">
-          {filteredEvents.map((event) => (
-            <div key={event.id}>
-              <EventCard
-                img={event.img}
-                name={event.name}
-                desc={event.desc}
-                pricing={event.pricing}
-                formLink={event.formLink}
-                eventType={event.eventType}
-              />
-            </div>
-          ))}
-        </div>
-      )}
-
-      
+          </>
+        )}
+      </div>
     </div>
   );
 };

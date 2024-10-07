@@ -6,11 +6,11 @@ import { x } from "react-icons-kit/feather/x";
 import Icon from "react-icons-kit";
 import { home } from 'react-icons-kit/feather/home';
 import { shoppingCart } from 'react-icons-kit/feather/shoppingCart';
+import { award } from 'react-icons-kit/feather/award';
 import { calendar } from 'react-icons-kit/feather/calendar';
 import { bookOpen } from 'react-icons-kit/feather/bookOpen';
 import { mail } from 'react-icons-kit/feather/mail';
 import { info } from 'react-icons-kit/feather/info';
-
 const NavBar = ({ logged }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -62,6 +62,7 @@ const NavBar = ({ logged }) => {
             <Icon icon={bookOpen} size={20} className="mb-1" />
             Workshops
           </Link>
+          
           <Link
             to="/contact"
             className="flex flex-col items-center text-base hover:text-[#af3a40] transition-all duration-300 font-semibold"

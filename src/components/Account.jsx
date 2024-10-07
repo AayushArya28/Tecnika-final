@@ -21,7 +21,7 @@ const Account = () => {
         Sign in as <span>{auth?.currentUser?.email}</span>
       </div>
       <button
-        className="text-white bg-[#9360FA] hover:bg-[#9360FA]/80 border border-white nav_Box_shadow h-10 font-Default w-2/3 md:w-1/3 text-center"
+        className="text-black bg-white hover:bg-[#af3a40]/80 nav_Box_shadow h-10 font-Default w-2/3 md:w-1/6 text-center font-bold rounded-full hover:text-white transition-all duration-300"
         type="button"
         onClick={LogoutUser}
       >

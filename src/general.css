@@ -74,15 +74,17 @@
 }
 @font-face {
   font-family: 'Anime';
-  src: url('../fonts/go3v2.ttf') format('truetype');
+  src: url('./fonts/go3v2.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
+}
+
+.anime-font {
+  font-family: 'Anime', sans-serif;
 }
 
 body 
 {
-    font-family: 'Anime' ;
-}
-.font-anime {
-  font-family: 'Anime';
+    font-family: 'Anime'; 
 }

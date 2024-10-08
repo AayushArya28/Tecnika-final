@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-row items-center justify-between">
           <div className="w-1/3 text-left space-y-1 sm:space-y-3">
-            <h3 className="text-lg sm:text-2xl md:text-3xl">TECHNIKA 2024</h3>
+            <h3 className="text-lg sm:text-3xl md:text-5xl anime-font text-[#af3a40] tracking-wider">TECHNIKA 2K24</h3>
             <p className="text-xs sm:text-sm md:text-base">
               INNOVATING TODAY, SUSTAINING TOMORROW
             </p>

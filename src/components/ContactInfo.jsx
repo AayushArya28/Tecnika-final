@@ -5,8 +5,7 @@ const ContactInfo = () => {
   return (
     <section className="flex flex-col md:flex-row justify-between items-start bg-[#17252a] rounded-lg text-white p-6 md:p-10 space-y-8 md:space-y-0">
       <div className="md:w-1/2 space-y-4">
-        <h2 className="text-xl md:text-2xl font-bold">Contact Info</h2>
-
+        <h2 className="text-4xl md:text-5xl font-bold anime-font text-[#af3a40] tracking-wider">Contact Info</h2>
         <div>
           <p className="text-lg font-semibold ">ADDRESS</p>
           <p>Birla Institute of Technology Patna, Bihar 800014, India</p>

@@ -1,9 +1,8 @@
 import Icon from "react-icons-kit";
 import { instagram } from "react-icons-kit/fa/instagram";
-import { linkedinSquare } from "react-icons-kit/fa/linkedinSquare";
 import PropTypes from "prop-types";
 
-const ContactCard = ({ image, name, email, phone, insta, linkedin, position }) => {
+const ContactCard = ({ image, name, email, phone, insta, position }) => {
   return (
     <div className="relative">
       <div className="w-[285px] h-[380px] md:w-[380px] bg-[#17252A] p-6 border-2 border-[#2B7A78] rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 ease-in-out mx-auto font-Default tracking-wider flex flex-col justify-between">

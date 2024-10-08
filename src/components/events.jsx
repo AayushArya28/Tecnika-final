@@ -70,15 +70,25 @@ const Events = () => {
         />
       </figure>
 
-      {/* Search input */}
-      <div className="relative z-10 mx-auto max-w-md mb-8 font-Default">
-        <input
-          type="text"
-          placeholder="Search events..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full px-10 py-2 text-gray-900 bg-white bg-opacity-75 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+      {/* Search input and Brochure button */}
+      <div className="relative z-10 mx-auto w-full max-w-2xl mb-10 font-Default">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-2">
+          <input
+            type="text"
+            placeholder="Search events..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full flex-grow px-4 py-2 text-gray-900 bg-white bg-opacity-75 rounded-full sm:rounded--full  focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <a
+            href="./src/assets/EventBrochure-compressed.pdf" // Replace with the actual path to your brochure
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-1/2 sm:w-auto px-4 py-2 bg-[#17252a] text-white font-semibold rounded-full sm:rounded-full hover:bg-[#af4a4a] transition-colors duration-300 text-center whitespace-nowrap "
+          >
+            Event Brochure
+          </a>
+        </div>
       </div>
 
       <div className="flex-grow z-10">

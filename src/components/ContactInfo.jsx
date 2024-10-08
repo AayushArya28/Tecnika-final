@@ -1,4 +1,5 @@
 import React from 'react';
+import '../general.css';
 
 const ContactInfo = () => {
   return (
@@ -7,7 +8,7 @@ const ContactInfo = () => {
         <h2 className="text-xl md:text-2xl font-bold">Contact Info</h2>
 
         <div>
-          <p className="text-lg font-semibold">ADDRESS</p>
+          <p className="text-lg font-semibold ">ADDRESS</p>
           <p>Birla Institute of Technology Patna, Bihar 800014, India</p>
         </div>
 

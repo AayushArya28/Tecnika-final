@@ -4,6 +4,7 @@ import EventCard from "./eventCard";
 import Eco from "../assets/eco.png";
 import "../general.css";
 import { collection, getDocs } from "firebase/firestore";
+import EventBrochure from '../assets/EventBrochure-compressed.pdf';
 
 const EventDetails = ({ name, desc, pricing, formLink }) => {
   return (
@@ -81,7 +82,7 @@ const Events = () => {
             className="w-full flex-grow px-4 py-2 text-gray-900 bg-white bg-opacity-75 rounded-full sm:rounded--full  focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <a
-            href="./src/assets/EventBrochure-compressed.pdf" // Replace with the actual path to your brochure
+            href={EventBrochure}
             target="_blank"
             rel="noopener noreferrer"
             className="w-1/2 sm:w-auto px-4 py-2 bg-[#17252a] text-white font-semibold rounded-full sm:rounded-full hover:bg-[#af4a4a] transition-colors duration-300 text-center whitespace-nowrap "

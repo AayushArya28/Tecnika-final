@@ -62,7 +62,7 @@ const ImageCarousel = () => {
       >
         <SplideSlide>
           <img
-            src="/slideshow/cultural.png"
+            src="/slideshow/cultural.webp"
             alt="Cultural Event"
             className={imageClassName}
             style={{ padding: '0.4rem' }} 
@@ -71,7 +71,7 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/slideshow/dance.png"
+            src="/slideshow/dance.webp"
             alt="Dance"
             className={imageClassName}
             style={{ padding: '0.4rem' }} 
@@ -80,7 +80,7 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/slideshow/dance2.png"
+            src="/slideshow/dance2.webp"
             alt="Group Dance"
             className={imageClassName}
             style={{ padding: '0.4rem' }} 
@@ -89,7 +89,7 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/slideshow/dj.png"
+            src="/slideshow/dj.webp"
             alt="DJ"
             className={imageClassName}
             style={{ padding: '0.4rem' }}
@@ -98,7 +98,7 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/slideshow/fashion.png"
+            src="/slideshow/fashion.webp"
             alt="Fashion"
             className={imageClassName}
             style={{ padding: '0.4rem' }}
@@ -107,7 +107,7 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/slideshow/paintball.png"
+            src="/slideshow/paintball.webp"
             alt="Paint Ball"
             className={imageClassName}
             style={{ padding: '0.4rem' }}
@@ -116,7 +116,7 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/slideshow/pitching.png"
+            src="/slideshow/pitching.webp"
             alt="Pitching"
             className={imageClassName}
             style={{ padding: '0.4rem' }}
@@ -125,7 +125,7 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/slideshow/singing.png"
+            src="/slideshow/singing.webp"
             alt="Singing"
             className={imageClassName}
             style={{ padding: '0.4rem' }}
@@ -134,7 +134,7 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/slideshow/tall-tower.png"
+            src="/slideshow/tall-tower.webp"
             alt="Tall Tower"
             className={imageClassName}
             style={{ padding: '0.4rem' }}
@@ -143,7 +143,7 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
-            src="/slideshow/tech.png"
+            src="/slideshow/tech.webp"
             alt="Tech Event"
             className={imageClassName}
             style={{ padding: '0.4rem' }}

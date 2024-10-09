@@ -34,7 +34,7 @@ const NavBar = ({ logged }) => {
         <div className="hidden md:flex gap-10 items-center justify-center mx-auto text-white">
           <Link
             to="/"
-            className="flex flex-col items-center text-base hover:text-[#af3a40] transition-all duration-300 font-semibold"
+            className="flex flex-col items-center text-base hover:text-[#af3a40] transition-all duration-300 font-semibold font-Default"
           >
             <Icon icon={home} size={20} className="mb-1" />
             Home
@@ -43,21 +43,21 @@ const NavBar = ({ logged }) => {
             href="https://forms.gle/dhrRnoE1nJHX8zNw5"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center text-base hover:text-[#af3a40] transition-all duration-300 font-semibold"
+            className="flex flex-col items-center text-base hover:text-[#af3a40] transition-all duration-300 font-semibold font-Default"
           >
             <Icon icon={shoppingCart} size={20} className="mb-1" />
             Merchandise
           </a>
           <Link
             to="/events"
-            className="flex flex-col items-center text-base hover:text-[#af3a40] transition-all duration-300 font-semibold"
+            className="flex flex-col items-center text-base hover:text-[#af3a40] transition-all duration-300 font-semibold font-Default"
           >
             <Icon icon={calendar} size={20} className="mb-1" />
             Events
           </Link>
           <Link
             to="/workshops"
-            className="flex flex-col items-center text-base hover:text-[#af3a40] transition-all duration-300 font-semibold"
+            className="flex flex-col items-center text-base hover:text-[#af3a40] transition-all duration-300 font-semibold font-Default"
           >
             <Icon icon={bookOpen} size={20} className="mb-1" />
             Workshops
@@ -65,14 +65,14 @@ const NavBar = ({ logged }) => {
           
           <Link
             to="/contact"
-            className="flex flex-col items-center text-base hover:text-[#af3a40] transition-all duration-300 font-semibold"
+            className="flex flex-col items-center text-base hover:text-[#af3a40] transition-all duration-300 font-semibold font-Default"
           >
             <Icon icon={mail} size={20} className="mb-1" />
             Contact
           </Link>
           <Link
             to="/about"
-            className="flex flex-col items-center text-base hover:text-[#af3a40] transition-all duration-300 font-semibold"
+            className="flex flex-col items-center text-base hover:text-[#af3a40] transition-all duration-300 font-semibold font-Default"
           >
             <Icon icon={info} size={20} className="mb-1" />
             About
@@ -82,7 +82,7 @@ const NavBar = ({ logged }) => {
         <div className="hidden md:block">
           <Link
             to={logged ? "/account" : "/login"}
-            className="text-black bg-white px-6 py-2 rounded-full border border-transparent hover:bg-[#af3a40] hover:text-white transition-all duration-300 font-medium shadow-lg"
+            className="text-black bg-white px-6 py-2 rounded-full border border-transparent hover:bg-[#af3a40] hover:text-white transition-all duration-300 font-bold font-Default shadow-lg"
           >
             {logged ? "Your Account" : "Login"}
           </Link>

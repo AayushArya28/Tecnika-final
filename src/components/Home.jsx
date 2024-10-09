@@ -15,25 +15,25 @@ const Home = ({ logged }) => {
       <div className="flex flex-col justify-center items-center text-center relative z-10 mt-24 sm:mt-24">
         <section className="text-primary flex flex-col justify-center items-center font-anime">
           <Bounce triggerOnce={true} delay={200}>
-            <p className="text-base sm:text-lg md:text-2xl tracking-wider sm:tracking-widest md:tracking-[0.8rem] font-anime mb-4 text-white font-bold">
+            <p className="text-base sm:text-lg md:text-2xl tracking-wider sm:tracking-widest md:tracking-[0.8rem] font-Default mb-4 text-white font-bold">
               26-28th October
             </p>
           </Bounce>
 
           <Fade
-            className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-wide sm:tracking-[0.7rem] md:tracking-[1rem] font-bold font-anime mb-4"
+            className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-wide sm:tracking-[0.7rem] md:tracking-[1rem] font-bold font-Default mb-4"
             triggerOnce={true}
             delay={500}
             cascade
             damping={0.2}
           >
-            <span className="animate-text bg-gradient-to-r from-[#ff416c] via-[#ff4b2b] to-[#fbb034] text-transparent bg-clip-text font-anime">
+            <span className="animate-text bg-gradient-to-r from-[#ff416c] via-[#ff4b2b] to-[#fbb034] text-transparent bg-clip-text font-Default">
               TECHNIKA 2024-25
             </span>
           </Fade>
 
           <Bounce triggerOnce={true} direction="up" delay={800}>
-            <p className="text-md sm:text-2xl md:text-4xl tracking-normal sm:tracking-wider md:tracking-widest font-bold text-[#ceffd1] font-anime mt-4 animate-pulse">
+            <p className="text-md sm:text-2xl md:text-4xl tracking-normal sm:tracking-wider md:tracking-widest font-bold text-[#ceffd1] font-Default mt-4 animate-pulse">
               Innovating Today, Sustaining Tomorrow
             </p>
           </Bounce>

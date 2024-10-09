@@ -13,12 +13,12 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-row items-center justify-between">
           <div className="w-1/3 text-left space-y-1 sm:space-y-3">
-            <h3 className="text-lg sm:text-3xl md:text-5xl anime-font text-[#ffffff] tracking-wider">TECHNIKA 2K24</h3>
-            <p className="text-xs sm:text-sm md:text-base">
+            <h3 className="text-lg sm:text-3xl md:text-5xl font-Default text-[#ffffff] tracking-wider">TECHNIKA 2K24</h3>
+            <p className="text-xs sm:text-sm md:text-base font-Default">
               INNOVATING TODAY, SUSTAINING TOMORROW
             </p>
             <div className="flex flex-col items-start mt-1 sm:mt-3">
-              <span className="text-xs sm:text-sm md:text-md mb-1 sm:mb-2">
+              <span className="text-xs sm:text-sm md:text-md mb-1 sm:mb-2 font-Default">
                 FOLLOW US ON
               </span>
               <div className="flex">
@@ -52,16 +52,16 @@ const Footer = () => {
               alt="BIT Mesra Logo"
               className="w-12 sm:w-16 md:w-28 h-auto object-contain mb-1 sm:mb-3 pointer-events-none"
             />
-            <p className="md:block hidden text-sm text-gray-400">
+            <p className="md:block hidden text-sm text-gray-400 font-Default">
               &copy; 2024 TECHNIKA. All Rights Reserved.
             </p>
           </div>
 
           <div className="w-1/3 text-right space-y-0 sm:space-y-1 md:space-y-2">
-            <p className="text-[10px] sm:text-xs md:text-sm">
+            <p className="text-[10px] sm:text-xs md:text-sm font-Default">
               Birla Institute of Technology
             </p>
-            <p className="text-[10px] sm:text-xs md:text-sm">
+            <p className="text-[10px] sm:text-xs md:text-sm font-Default">
               Patna, Bihar 800014, India
             </p>
             <a
@@ -72,7 +72,7 @@ const Footer = () => {
                 size={12}
                 className="sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1 sm:mr-2"
               />
-              <span className="text-[10px] sm:text-xs md:text-sm">
+              <span className="text-[10px] sm:text-xs md:text-sm font-Default">
                 technika@bitmesra.ac.in
               </span>
             </a>
@@ -81,7 +81,7 @@ const Footer = () => {
                 size={12}
                 className="sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1 sm:mr-2"
               />
-              <span className="text-[10px] sm:text-xs md:text-sm">
+              <span className="text-[10px] sm:text-xs md:text-sm font-Default">
                 +91 8252624667
               </span>
             </div>

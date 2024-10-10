@@ -82,7 +82,7 @@ const Footer = () => {
                 className="sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1 sm:mr-2"
               />
               <span className="text-[10px] sm:text-xs md:text-sm font-Default">
-                +91 8252624667
+                +91 7857809775
               </span>
             </div>
           </div>

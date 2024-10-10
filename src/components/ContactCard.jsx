@@ -13,6 +13,7 @@ const ContactCard = ({ image, name, email, phone, insta, position }) => {
               className="object-cover w-full h-full rounded-full transition-transform duration-300 hover:scale-110"
               src={image}
               alt={name}
+              loading="lazy"
             />
           </figure>
         </div>

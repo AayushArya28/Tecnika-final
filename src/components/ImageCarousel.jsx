@@ -125,6 +125,15 @@ const ImageCarousel = () => {
         </SplideSlide>
         <SplideSlide>
           <img
+            src="/slideshow/img1.webp"
+            alt="Pitching"
+            className={imageClassName}
+            style={{ padding: '0.4rem' }}
+            loading="lazy"
+          />
+        </SplideSlide>
+        <SplideSlide>
+          <img
             src="/slideshow/singing.webp"
             alt="Singing"
             className={imageClassName}

@@ -5,6 +5,8 @@ import Eco from "../assets/eco.png";
 import "../general.css";
 import { collection, getDocs } from "firebase/firestore";
 import EventBrochure from '../assets/EventBrochure-compressed.pdf';
+import { getAuth, onAuthStateChanged } from "firebase/auth"; // Firebase auth import
+import { useNavigate } from "react-router-dom"; // React Router for navigation
 
 const EventDetails = ({ name, desc, pricing, formLink }) => {
   return (
@@ -27,7 +29,25 @@ const EventDetails = ({ name, desc, pricing, formLink }) => {
 const Events = () => {
   const [eventsData, setEventsData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true); // Loading state for auth check
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Authentication state
+  const navigate = useNavigate();
   const registerButtonRef = useRef(null);
+
+  // Check user authentication status
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsAuthenticated(true); // User is logged in
+      } else {
+        navigate("/login"); // Redirect to login page if not logged in
+      }
+      setLoading(false); // End loading after auth check
+    });
+
+    return () => unsubscribe(); // Clean up auth listener on unmount
+  }, [navigate]);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -57,6 +77,12 @@ const Events = () => {
 
   const categories = ['technical', 'Cultural', 'fun', 'esports'];
 
+  // Show loading state while checking auth status
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  // Main render if user is authenticated
   return (
     <div className="relative container mx-auto overflow-hidden w-full px-4 py-8 min-h-screen flex flex-col">
       <h1 className="text-4xl font-bold text-white text-center mb-8 z-10 relative font-Default">
@@ -79,7 +105,7 @@ const Events = () => {
             placeholder="Search events..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full flex-grow px-4 py-2 text-gray-900 bg-white bg-opacity-75 rounded-full sm:rounded--full  focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full flex-grow px-4 py-2 text-gray-900 bg-white bg-opacity-75 rounded-full sm:rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <a
             href={EventBrochure}

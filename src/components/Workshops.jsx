@@ -5,6 +5,8 @@ import WorkshopCard from "./WorkshopCard";
 import CardContainer from "./CardContainer";
 import Eco from "../assets/eco.png";
 import "../general.css";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useNavigate } from "react-router-dom"; // React Router for navigation
 
 const WorkshopDetails = ({ title, description, formLink, pricing }) => {
   return (
@@ -30,26 +32,47 @@ const Workshops = () => {
   const [workshopsData, setWorkshopsData] = useState([]);
   const [selectedWorkshop, setSelectedWorkshop] = useState(null);
   const [animate, setAnimate] = useState(false);
+  const [loading, setLoading] = useState(true); // Loading state for authentication check
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Auth state
+  const navigate = useNavigate();
 
+  // Check user authentication status
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is logged in
+        setIsAuthenticated(true);
+      } else {
+        // User is not logged in, redirect to login
+        navigate("/login");
+      }
+      setLoading(false); // Finish loading after auth check
+    });
+
+    return () => unsubscribe(); // Clean up auth listener on component unmount
+  }, [navigate]);
+
+  // Delay animation
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimate(true);
     }, 100);
-
     return () => clearTimeout(timer);
   }, []);
 
+  // Fetch workshops from Firebase Firestore
   useEffect(() => {
     const fetchWorkshops = async () => {
-      const workshopsCollection = collection(db, 'workshop');
+      const workshopsCollection = collection(db, "workshop");
       const workshopDocs = await getDocs(workshopsCollection);
-      const workshopsList = workshopDocs.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const workshopsList = workshopDocs.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
       setWorkshopsData(workshopsList);
     };
-
     fetchWorkshops();
   }, []);
 
+  // Handle click event for workshop selection
   const handleWorkshopClick = useCallback((workshop) => {
     setSelectedWorkshop(workshop);
     setTimeout(() => {
@@ -60,6 +83,12 @@ const Workshops = () => {
     }, 0);
   }, []);
 
+  // Show loading while checking auth state
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  // Main render section for workshops if user is authenticated
   return (
     <div className="relative container mx-auto overflow-hidden w-full">
       <h1 className="text-4xl font-bold text-white text-center pt-6 z-10 relative font-Default">
@@ -67,11 +96,7 @@ const Workshops = () => {
       </h1>
 
       <figure className="w-full h-full absolute inset-0 z-0">
-        <img
-          src={Eco}
-          alt="Technika"
-          className="object-cover w-full h-full opacity-60"
-        />
+        <img src={Eco} alt="Technika" className="object-cover w-full h-full opacity-60" />
       </figure>
 
       <CardContainer>
